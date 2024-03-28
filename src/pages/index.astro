@@ -1,0 +1,117 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import ImageCarousel from "../components/ImageCarousel";
+
+const images = [
+  "/assets/images/test2.webp",
+  "/assets/images/test3.webp",
+  "/assets/images/test.png",
+];
+---
+
+<Layout title="Bienvenido a Peludogs">
+  <main>
+    <h1
+      class="text-3xl font-bold text-neutral-700 text-center underline decoration-green-700 mt-4 mb-4"
+    >
+      Tu Peluqiería Canina de Confianza
+    </h1>
+
+    <ImageCarousel client:load images={images} />
+    <section class="mt-4">
+      <h1
+        class="text-2xl font-bold text-neutral-700 text-center underline decoration-green-700"
+      >
+        Nuestros servicios
+      </h1>
+
+      <ul role="list" class="link-card-grid my-4">
+        <Card
+          title="Peluería"
+          imageSrc="assets/images/servicio_1.jpg"
+          description="Transformamos a tu mejor amigo en una estrella!"
+          sectionSrc="/services"
+        />
+        <Card
+          title="Corte de uñas"
+          imageSrc="assets/images/servicio_2.jpg"
+          description="La salud de las patas de tu mascota es nuestra prioridad."
+          sectionSrc="/services"
+        />
+
+        <Card
+          title="Baño"
+          imageSrc="assets/images/servicio_3.jpg"
+          description="Nuestro servicio de baños para mascotas no es solo una limpieza profunda."
+          sectionSrc="/services"
+        />
+      </ul>
+    </section>
+    <section class="mt-4">
+      <h1
+        class="text-2xl font-bold text-neutral-700 text-center underline decoration-green-700 mt-4"
+      >
+        Nuestros productos
+      </h1>
+
+      <ul role="list" class="link-card-grid my-4">
+        <Card
+          title="Comida para perros"
+          imageSrc="assets/images/producto_1.jpg"
+          description="Nutre a tu fiel amigo con nuestra selección premium de alimentos para perros."
+          sectionSrc="/products"
+        />
+        <Card
+          title="Snacks y Chuches"
+          imageSrc="assets/images/producto_2.jpg"
+          description="Consiente a tu perro con nuestros deliciosos snacks y chuches."
+          sectionSrc="/products"
+        />
+
+        <Card
+          title="Accesorios y Juguetes"
+          imageSrc="assets/images/producto_3.jpg"
+          description="Descubre el paraíso de los juguetes y accesorios para tu perro en nuestra tienda."
+          sectionSrc="/products"
+        />
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<!-- <Card
+title="Peluería"
+imageSrc="assets/images/servicio_1.jpg"
+description="Transformamos a tu mejor amigo en una estrella! Nuestro servicio de peluquería canina incluye un corte personalizado que no solo resalta su belleza natural, sino que también asegura su comodidad. Utilizamos productos suaves y técnicas profesionales para que tu mascota luzca y se sienta espectacular."
+/>
+<Card
+title="Corte de uñas"
+imageSrc="assets/images/servicio_2.jpg"
+description="La salud de las patas de tu mascota es nuestra prioridad. Ofrecemos un servicio de corte de uñas rápido, seguro y cómodo, evitando molestias y promoviendo una marcha saludable. ¡Cuida las patas de tu amigo peludo para que siga corriendo y jugando feliz!"
+/>
+
+<Card
+title="Baño"
+imageSrc="assets/images/servicio_3.jpg"
+description="Nuestro servicio de baños para mascotas no es solo una limpieza profunda, es una experiencia de mimos y relajación. Utilizamos champús especiales que cuidan su piel y pelo, dejando a tu mascota con un aroma fresco y un pelaje suave y brillante. Perfecto para mantener a tu compañero siempre listo para un abrazo."
+/> 
+
+        <Card
+          title="Comida para perros"
+          imageSrc="assets/images/producto_1.jpg"
+          description="Nutre a tu fiel amigo con nuestra selección premium de alimentos para perros. Cada bocado está lleno de los nutrientes esenciales para mantener a tu mascota sana, activa y feliz. Elije entre una variedad de sabores y fórmulas específicas para cada etapa de la vida de tu compañero peludo."
+        />
+        <Card
+          title="Snacks y Chuches"
+          imageSrc="assets/images/producto_2.jpg"
+          description="Consiente a tu perro con nuestros deliciosos snacks y chuches. Perfectos para entrenamiento o simplemente como una muestra de amor, nuestros bocados saludables son el complemento ideal para su dieta diaria. Descubre sabores irresistibles que harán mover la cola de tu amigo de felicidad."
+        />
+
+        <Card
+          title="Accesorios y Juguetes"
+          imageSrc="assets/images/producto_3.jpg"
+          description="Descubre el paraíso de los juguetes y accesorios para tu perro en nuestra tienda. Desde divertidos juguetes para mantenerlos activos y entretenidos, hasta los accesorios más chic para pasear con estilo. Todo lo que tu mascota necesita para jugar, aprender y explorar el mundo a su lado."
+        />
+
+-->

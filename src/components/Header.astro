@@ -1,0 +1,70 @@
+<header
+  class="text-neutral-700 flex items-center justify-between px-4 py-1 border-b-2 border-green-700"
+>
+  <!-- Logotipo -->
+  <a href="/" class="shrink-0">
+    <img src="/assets/logos/logo.png" alt="Peludogs" class="h-12 md:h-24" />
+  </a>
+
+  <!-- Navegación (oculta en móvil y se muestra como desplegable) -->
+  <nav
+    class="hidden w-full md:flex md:justify-center md:items-center"
+    id="menu"
+  >
+    <ul class="flex flex-col md:flex-row md:space-x-4">
+      <li><a href="/" class="block px-2 py-1 hover:text-gray-300">Inicio</a></li>
+      <li>
+        <a href="/services" class="block px-2 py-1 hover:text-gray-300"
+          >Servicios</a
+        >
+      </li>
+      <li>
+        <a href="/product" class="block px-2 py-1 hover:text-gray-300"
+          >Productos</a
+        >
+      </li>
+      <li>
+        <a href="/gallery" class="block px-2 py-1 hover:text-gray-300"
+          >Galería</a
+        >
+      </li>
+      <li>
+        <a href="/testimonials" class="block px-2 py-1 hover:text-gray-300"
+          >Testimonios</a
+        >
+      </li>
+      <li>
+        <a href="/contact" class="block px-2 py-1 hover:text-gray-300"
+          >Contacto</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Botón de menú hamburguesa (visible solo en móvil) -->
+  <button class="md:hidden p-2" aria-label="Toggle menu" id="menuButton">
+    <svg
+      class="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M4 6h16M4 12h16m-7 6h7"></path></svg
+    >
+  </button>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById("menuButton");
+    const menu = document.getElementById("menu");
+
+    menuButton.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
