@@ -4,11 +4,9 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Servicios">
   <!-- Contenedor principal de servicios -->
-  <div class="container mx-auto px-4 py-8">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Nuestros Servicios</h2>
-
-    <!-- Tabs de navegación de servicios -->
-    <nav class="flex mb-4">
+  <div class="container mx-auto px-4 py-8 min-h-screen">
+    <h2 class="text-2xl text-center underline decoration-green-700 font-semibold text-gray-800 mb-6">Nuestros Servicios</h2>
+    <nav class="flex mb-4 justify-center">
       <button class="text-3xl text-gray-600 py-2 px-4 focus:outline-none">
         <i class="fa-solid fa-scissors text-gray-600"></i></button
       >
@@ -19,61 +17,74 @@ import Layout from "../layouts/Layout.astro";
         ><i class="fa-solid fa-shower text-gray-600"></i></button
       >
     </nav>
+    <!-- Grid de servicios con líneas divisorias -->
+    <div class="grid md:grid-cols-3 gap-4 md:divide-x divide-green-700">
 
-    <!-- Sección Full Groom -->
-    <div class="mb-8">
-      <h3 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
-        <i class="fa-solid fa-scissors text-gray-600 mr-2"></i>
-        Peluquería
-      </h3>
-      <p class="text-gray-600">
-        Transformamos a tu mejor amigo en una estrella! Nuestro servicio de
-        peluquería canina incluye un corte personalizado que no solo resalta su
-        belleza natural, sino que también asegura su comodidad. Utilizamos
-        productos suaves y técnicas profesionales para que tu mascota luzca y se
-        sienta espectacular.
-      </p>
-      <br />
-      <small class="text-gray-600"
-        >Pequeño: $50 - $60 Mediano: $60 - $70 Grande: $70 - $80
-      </small>
-    </div>
+      <!-- Peluquería -->
+      <div class="mb-8 px-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
+          <!-- Imagen para Peluquería -->
+          Peluquería
+        </h3>
+        <img src="/assets/images/servicio_1.jpg" alt="Peluquería" class="w-full h-44 object-cover mb-4 rounded">
+        <p class="text-gray-600">
+          Transformamos a tu mejor amigo en una estrella! Nuestro servicio de
+          peluquería canina incluye un corte personalizado que no solo resalta su
+          belleza natural, sino que también asegura su comodidad. Utilizamos
+          productos suaves y técnicas profesionales para que tu mascota luzca y se
+          sienta espectacular.
+        </p>
+        <div class="mt-10">
+          <p class="text-gray-600 font-semibold">Precios:</p>
+          <p class="text-gray-600">Pequeño: $50 - $60</p>
+          <p class="text-gray-600">Mediano: $60 - $70</p>
+          <p class="text-gray-600">Grande: $70 - $80</p>
+        </div>
+      </div>
 
-    <!-- Sección Nail Trim -->
-    <div class="mb-8">
-      <h3 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
-        <i class="fa-solid fa-paw text-gray-600 mr-2"></i>
-        Corte de uñas
-      </h3>
-      <p class="text-gray-600">
-        La salud de las patas de tu mascota es nuestra prioridad. Ofrecemos un
-        servicio de corte de uñas rápido, seguro y cómodo, evitando molestias y
-        promoviendo una marcha saludable. ¡Cuida las patas de tu amigo peludo
-        para que siga corriendo y jugando feliz!
-      </p>
-      <br />
-      <small class="text-gray-600"
-        >Pequeño: $50 - $60 Mediano: $60 - $70 Grande: $70 - $80
-      </small>
-    </div>
+      <!-- Corte de uñas -->
+      <div class="mb-8 px-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
+          <!-- Imagen para Corte de uñas -->
+          Corte de uñas
+        </h3>
+        <img src="/assets/images/servicio_2.jpg" alt="Corte de uñas" class="w-full h-44 object-cover mb-4 rounded">
+        <p class="text-gray-600">
+          La salud de las patas de tu mascota es nuestra prioridad. Ofrecemos un
+          servicio de corte de uñas rápido, seguro y cómodo, evitando molestias y
+          promoviendo una marcha saludable. ¡Cuida las patas de tu amigo peludo
+          para que siga corriendo y jugando feliz!
+        </p>
+        <div class="mt-10">
+          <p class="text-gray-600 font-semibold">Precios:</p>
+          <p class="text-gray-600">Pequeño: $50 - $60</p>
+          <p class="text-gray-600">Mediano: $60 - $70</p>
+          <p class="text-gray-600">Grande: $70 - $80</p>
+        </div>
+      </div>
 
-    <!-- Sección Bath & Brush -->
-    <div class="mb-8">
-      <h3 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
-        <i class="fa-solid fa-shower text-gray-600 mr-2"></i>
-        Baño
-      </h3>
-      <p class="text-gray-600">
-        Nuestro servicio de baños para mascotas no es solo una limpieza
-        profunda, es una experiencia de mimos y relajación. Utilizamos champús
-        especiales que cuidan su piel y pelo, dejando a tu mascota con un aroma
-        fresco y un pelaje suave y brillante. Perfecto para mantener a tu
-        compañero siempre listo para un abrazo.
-      </p>
-      <br />
-      <small class="text-gray-600"
-        >Pequeño: $50 - $60 Mediano: $60 - $70 Grande: $70 - $80
-      </small>
+      <!-- Baño -->
+      <div class="mb-8 px-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2 flex items-center">
+          <!-- Imagen para Baño -->
+          Baño
+        </h3>
+        <img src="/assets/images/servicio_3.jpg" alt="Baño" class="w-full h-44 object-cover mb-4 rounded">
+        <p class="text-gray-600">
+          Nuestro servicio de baños para mascotas no es solo una limpieza
+          profunda, es una experiencia de mimos y relajación. Utilizamos champús
+          especiales que cuidan su piel y pelo, dejando a tu mascota con un aroma
+          fresco y un pelaje suave y brillante. Perfecto para mantener a tu
+          compañero siempre listo para un abrazo.
+        </p>
+        <div class="mt-4">
+          <p class="text-gray-600 font-semibold">Precios:</p>
+          <p class="text-gray-600">Pequeño: $50 - $60</p>
+          <p class="text-gray-600">Mediano: $60 - $70</p>
+          <p class="text-gray-600">Grande: $70 - $80</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </Layout>

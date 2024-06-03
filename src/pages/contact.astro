@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contacto">
+  <!-- Contenedor principal de contacto -->
+  <div class="container mx-auto px-4 py-8 min-h-screen">
+    <h2
+      class="text-2xl text-center underline decoration-green-700 font-semibold text-gray-800 mb-6"
+    >
+      Contáctanos
+    </h2>
+
+    <!-- Contenedor de grid para formulario e información -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Formulario de contacto -->
+      <div>
+        <form action="/send-form" method="POST" class="flex flex-col space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            class="border p-2 rounded"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            class="border p-2 rounded"
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Asunto"
+            class="border p-2 rounded"
+          />
+          <textarea
+            name="message"
+            placeholder="Mensaje"
+            class="border p-2 rounded"
+            rows="5"></textarea>
+          <button
+            type="submit"
+            class="bg-green-700 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            >Enviar</button
+          >
+        </form>
+      </div>
+
+      <!-- Información de contacto -->
+      <div class="mb-6 mt-4">
+        <p class="font-semibold text-gray-800">Peludogs</p>
+        <p class="text-gray-600">
+          Calle Sgto. Provisional, 61, 38010 Santa Cruz de Tenerife
+        </p>
+        <p class="text-gray-600">
+          Teléfono:
+          <a href="tel:+34658307250" class="hover:text-green-700"
+            >+34 658 30 72 50</a
+          >
+        </p>
+
+        <p class="text-gray-600">Email: contacto@peludogs.com</p>
+        <p class="text-gray-600">Horario: L - V 10:00-18:00</p>
+      </div>
+    </div>
+
+    <!-- Mapa incrustado -->
+    <div class="mt-6">
+      <iframe
+        class="w-full h-96 rounded-lg border-0"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.9827536216744!2d-16.29310568733697!3d28.449936275664005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cce6ff792e31%3A0x82464fe4aa632831!2sCalle%20Sgto.%20Provisional%2C%2061%2C%2038010%20Santa%20Cruz%20de%20Tenerife!5e0!3m2!1ses!2ses!4v1711817526455!5m2!1ses!2ses"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</Layout>

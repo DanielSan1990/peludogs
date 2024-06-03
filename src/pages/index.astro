@@ -2,29 +2,41 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import ImageCarousel from "../components/ImageCarousel";
+import loadImages from "../utils";
 
-const images = [
-  "/assets/images/test2.webp",
-  "/assets/images/test3.webp",
-  "/assets/images/test.png",
-];
+const images = await loadImages("public/assets/images", "carousel");
+console.log(images);
 ---
 
 <Layout title="Bienvenido a Peludogs">
   <main>
     <h1
-      class="text-3xl font-bold text-neutral-700 text-center underline decoration-green-700 mt-4 mb-4"
+      class="flex flex-wrap justify-center items-center text-3xl font-bold text-neutral-700 underlinemt-4 mb-4"
     >
-      Tu Peluqiería Canina de Confianza
+      Bienvenid@ a
+      <img
+        src="/assets/logos/logo.png"
+        alt="Peludogs"
+        class="h-16 md:h-36 ml-2"
+      />
     </h1>
 
-    <ImageCarousel client:load images={images} />
-    <section class="mt-4">
-      <h1
-        class="text-2xl font-bold text-neutral-700 text-center underline decoration-green-700"
-      >
-        Nuestros servicios
-      </h1>
+    <div class="w-full rounded-lg overflow-hidden">
+      <video width="100%" height="auto" autoplay loop muted>
+        <source src="/assets/video/gosbi_publi.mp4" type="video/mp4" />
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
+    <!-- <ImageCarousel client:load images={images.map( imageName =>  `assets/images/carousel/${imageName}`)} /> -->
+    <section class="my-8">
+      <div class="flex items-center">
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+
+        <h1 class="px-4 text-2xl font-bold text-neutral-700">
+          Nuestros servicios
+        </h1>
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+      </div>
 
       <ul role="list" class="link-card-grid my-4">
         <Card
@@ -48,13 +60,16 @@ const images = [
         />
       </ul>
     </section>
-    <section class="mt-4">
-      <h1
-        class="text-2xl font-bold text-neutral-700 text-center underline decoration-green-700 mt-4"
-      >
-        Nuestros productos
-      </h1>
 
+    <section class="mt-8">
+      <div class="flex items-center">
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+
+        <h1 class="px-4 text-2xl font-bold text-neutral-700">
+          Nuestros productos
+        </h1>
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+      </div>
       <ul role="list" class="link-card-grid my-4">
         <Card
           title="Comida para perros"
@@ -76,6 +91,29 @@ const images = [
           sectionSrc="/products"
         />
       </ul>
+    </section>
+
+    <section class="mt-8">
+      <div class="flex items-center">
+        <div class="flex-grow h-0.5 bg-green-700 mb-4"></div>
+
+        <h1 class="px-4 text-2xl font-bold text-neutral-700">
+          Nuestros clientes opinan
+        </h1>
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+      </div>
+      <div class="mt-8">
+
+        <script
+          src="https://static.elfsight.com/platform/platform.js"
+          data-use-service-core
+          defer></script>
+        <div
+          class="elfsight-app-b5b171a3-026e-40d5-a8c0-8d8602e30140"
+          data-elfsight-app-lazy
+        >
+        </div>
+      </div>
     </section>
   </main>
 </Layout>

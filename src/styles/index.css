@@ -10,14 +10,14 @@
     );
 }
 html {
-    font-family: system-ui, sans-serif;
+    font-family: "Montserrat", sans-serif;
     background: #ffffff;
     background-size: 224px;
 }
 main {
     margin: auto;
     padding: 1rem;
-    width: 800px;
+    width: 900px;
     max-width: calc(100% - 2rem);
 
     font-size: 20px;
