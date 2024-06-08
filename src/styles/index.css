@@ -1,34 +1,83 @@
 :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-        45deg,
-        rgb(var(--accent)),
-        rgb(var(--accent-light)) 30%,
-        white 60%
-    );
+  --accent: 136, 58, 234;
+  --accent-light: 224, 204, 250;
+  --accent-dark: 49, 10, 101;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
 }
 html {
-    font-family: "Montserrat", sans-serif;
-    background: #ffffff;
-    background-size: 224px;
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+  background-size: 224px;
 }
 main {
-    margin: auto;
-    padding: 1rem;
-    width: 900px;
-    max-width: calc(100% - 2rem);
+  margin: auto;
+  padding: 1rem;
+  width: 900px;
+  max-width: calc(100% - 2rem);
 
-    font-size: 20px;
-    line-height: 1.6;
+  font-size: 20px;
+  line-height: 1.6;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 500px;
+  width: 100%;
+  z-index: 1000; /* Asegúrate de que el z-index sea alto para que el header esté por encima de otros elementos */
+  background-color: #ffffff; /* Añade un fondo para evitar transparencia */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra para destacar el header */
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  transition: background-color 1s, box-shadow 1s, transform 1s; /* Transición de 1 segundo */
+}
 
+header:hover {
+  background-color: #f1f1f1; /* Cambia el color de fondo al pasar el ratón */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+  transform: scale(1.05); /* Efecto de zoom */
+}
+
+body {
+  margin-top: 90px; /* Ajusta el margen superior del body para que el contenido no quede oculto bajo el header */
+}
+
+.logoPosition {
+  position: absolute;
+  margin-left: 250px;
+  transition: opacity 0.5s; /* Transición suave para desaparecer */
+}
+
+.ulHeader {
+  padding: 25px;
+}
+
+.textHover:hover {
+  color: rgb(21, 128, 61);
+}
+
+.containerTop {
+  position: relative;
+  top: 10px;
+}
 
 .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18ch, 2fr));
-    gap: 1rem;
-    padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18ch, 2fr));
+  gap: 1rem;
+  padding: 0;
+}
+
+/* Ocultar el logotipo en pantallas pequeñas */
+@media (max-width: 1280px) {
+  .logoPosition {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

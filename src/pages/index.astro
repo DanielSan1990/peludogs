@@ -38,27 +38,107 @@ console.log(images);
         <div class="flex-grow h-0.5 bg-green-700"></div>
       </div>
 
-      <ul role="list" class="link-card-grid my-4">
-        <Card
-          title="Peluería"
-          imageSrc="assets/images/servicio_1.jpg"
-          description="Transformamos a tu mejor amigo en una estrella!"
-          sectionSrc="/services"
-        />
-        <Card
-          title="Corte de uñas"
-          imageSrc="assets/images/servicio_2.jpg"
-          description="La salud de las patas de tu mascota es nuestra prioridad."
-          sectionSrc="/services"
-        />
+      <!-- Contenedor principal de servicios -->
+      <div class="container mx-auto px-4 py-4">
+        <nav class="flex mb-4 justify-center">
+          <button class="text-3xl text-gray-600 py-2 px-4 focus:outline-none">
+            <i class="fa-solid fa-scissors text-gray-600"></i></button
+          >
+          <button class="text-3xl text-gray-600 py-2 px-4 focus:outline-none">
+            <i class="fa-solid fa-paw text-gray-600"></i></button
+          >
+          <button class="text-3xl text-gray-600 py-2 px-4 focus:outline-none"
+            ><i class="fa-solid fa-shower text-gray-600"></i></button
+          >
+        </nav>
+        <!-- Grid de servicios con líneas divisorias -->
+        <div class="grid md:grid-cols-3 grid-rows-2 gap-4 md:divide-x divide-green-700">
+          <!-- Peluquería -->
+          <div class="mb-8 px-4">
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-2 flex items-center"
+            >
+              <!-- Imagen para Peluquería -->
+              Peluquería
+            </h3>
+            <img
+              src="/assets/images/servicio_1.jpg"
+              alt="Peluquería"
+              class="w-full h-44 object-cover mb-4 rounded"
+            />
+            <p class="text-gray-600">
+              Transformamos a tu mejor amigo en una estrella! Nuestro servicio
+              de peluquería canina incluye un corte personalizado que no solo
+              resalta su belleza natural, sino que también asegura su comodidad.
+              Utilizamos productos suaves y técnicas profesionales para que tu
+              mascota luzca y se sienta espectacular.
+            </p>
+          </div>
 
-        <Card
-          title="Baño"
-          imageSrc="assets/images/servicio_3.jpg"
-          description="Nuestro servicio de baños para mascotas no es solo una limpieza profunda."
-          sectionSrc="/services"
-        />
-      </ul>
+          <!-- Corte de uñas -->
+          <div class="mb-8 px-4">
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-2 flex items-center"
+            >
+              <!-- Imagen para Corte de uñas -->
+              Corte de uñas
+            </h3>
+            <img
+              src="/assets/images/servicio_2.jpg"
+              alt="Corte de uñas"
+              class="w-full h-44 object-cover mb-4 rounded"
+            />
+            <p class="text-gray-600">
+              La salud de las patas de tu mascota es nuestra prioridad.
+              Ofrecemos un servicio de corte de uñas rápido, seguro y cómodo,
+              evitando molestias y promoviendo una marcha saludable. ¡Cuida las
+              patas de tu amigo peludo para que siga corriendo y jugando feliz!
+            </p>
+            
+          </div>
+
+          <!-- Baño -->
+          <div class="mb-8 px-4">
+            <h3
+              class="text-lg font-semibold text-gray-800 mb-2 flex items-center"
+            >
+              <!-- Imagen para Baño -->
+              Baño
+            </h3>
+            <img
+              src="/assets/images/servicio_3.jpg"
+              alt="Baño"
+              class="w-full h-44 object-cover mb-4 rounded"
+            />
+            <p class="text-gray-600">
+              Nuestro servicio de baños para mascotas no es solo una limpieza
+              profunda, es una experiencia de mimos y relajación. Utilizamos
+              champús especiales que cuidan su piel y pelo, dejando a tu mascota
+              con un aroma fresco y un pelaje suave y brillante. Perfecto para
+              mantener a tu compañero siempre listo para un abrazo.
+            </p>
+            
+          </div>
+          <div class="mt-10">
+            <p class="text-gray-600 font-semibold">Precios:</p>
+            <p class="text-gray-600">Pequeño: $50 - $60</p>
+            <p class="text-gray-600">Mediano: $60 - $70</p>
+            <p class="text-gray-600">Grande: $70 - $80</p>
+          </div>
+          <div class="mt-10">
+            <p class="text-gray-600 font-semibold">Precios:</p>
+            <p class="text-gray-600">Pequeño: $50 - $60</p>
+            <p class="text-gray-600">Mediano: $60 - $70</p>
+            <p class="text-gray-600">Grande: $70 - $80</p>
+          </div>
+          <div class="mt-10">
+            <p class="text-gray-600 font-semibold">Precios:</p>
+            <p class="text-gray-600">Pequeño: $50 - $60</p>
+            <p class="text-gray-600">Mediano: $60 - $70</p>
+            <p class="text-gray-600">Grande: $70 - $80</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="mt-8">
@@ -95,6 +175,44 @@ console.log(images);
 
     <section class="mt-8">
       <div class="flex items-center">
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+
+        <h1 class="px-4 text-2xl font-bold text-neutral-700">Galería</h1>
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+      </div>
+
+      <!-- Código de la gallería anterior.
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {/* Suponiendo que tienes una lista de imágenes en tu componente */}
+          {images.map((image, index) => (
+            <div key={index} class="relative group">
+              <img src={image.src} alt={image.alt} loading="lazy"
+                   class="w-full h-auto transition-transform duration-300 ease-in-out group-hover:scale-110"/>
+              {/* Al hacer clic en la imagen, se abrirá el modal con la imagen completa */}
+              <a href="#" class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 ease-in-out" onclick="openModal(this)">
+                <span class="text-white opacity-0 group-hover:opacity-100 text-xl">Ver imagen</span>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    
+    
+      {/* Modal para la imagen expandida */}
+      <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-70 overflow-y-auto h-full w-full z-50" onclick="closeModal()">
+        <div class="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <img id="modalImage" class="rounded-lg shadow-lg" onclick="event.stopPropagation()" />
+          <button onclick="closeModal()" class="absolute top-0 right-0 text-white p-2">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    -->
+    </section>
+
+    <section class="mt-8">
+      <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700 mb-4"></div>
 
         <h1 class="px-4 text-2xl font-bold text-neutral-700">
@@ -103,7 +221,6 @@ console.log(images);
         <div class="flex-grow h-0.5 bg-green-700"></div>
       </div>
       <div class="mt-8">
-
         <script
           src="https://static.elfsight.com/platform/platform.js"
           data-use-service-core
@@ -115,10 +232,88 @@ console.log(images);
         </div>
       </div>
     </section>
-  </main>
-</Layout>
 
-<!-- <Card
+    <section class="mt-8">
+      <div class="flex items-center">
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+
+        <h1 class="px-4 text-2xl font-bold text-neutral-700">Contacto</h1>
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+      </div>
+      <!-- Contenedor principal de contacto -->
+      <div class="container mx-auto px-4 py-8">
+        <!-- Contenedor de grid para formulario e información -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- Formulario de contacto -->
+          <div>
+            <form
+              action="/send-form"
+              method="POST"
+              class="flex flex-col space-y-4"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre"
+                class="border p-2 rounded"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Correo electrónico"
+                class="border p-2 rounded"
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder="Asunto"
+                class="border p-2 rounded"
+              />
+              <textarea
+                name="message"
+                placeholder="Mensaje"
+                class="border p-2 rounded"
+                rows="5"></textarea>
+              <button
+                type="submit"
+                class="bg-green-700 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                >Enviar</button
+              >
+            </form>
+          </div>
+
+          <!-- Información de contacto -->
+          <div class="mb-6 mt-4">
+            <p class="font-semibold text-gray-800">Peludogs</p>
+            <p class="text-gray-600">
+              Calle Sgto. Provisional, 61, 38010 Santa Cruz de Tenerife
+            </p>
+            <p class="text-gray-600">
+              Teléfono:
+              <a href="tel:+34658307250" class="hover:text-green-700"
+                >+34 658 30 72 50</a
+              >
+            </p>
+
+            <p class="text-gray-600">Email: contacto@peludogs.com</p>
+            <p class="text-gray-600">Horario: L - V 10:00-18:00</p>
+          </div>
+        </div>
+
+        <!-- Mapa incrustado -->
+        <div class="mt-6">
+          <iframe
+            class="w-full h-96 rounded-lg border-0"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.9827536216744!2d-16.29310568733697!3d28.449936275664005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cce6ff792e31%3A0x82464fe4aa632831!2sCalle%20Sgto.%20Provisional%2C%2061%2C%2038010%20Santa%20Cruz%20de%20Tenerife!5e0!3m2!1ses!2ses!4v1711817526455!5m2!1ses!2ses"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- <Card
 title="Peluería"
 imageSrc="assets/images/servicio_1.jpg"
 description="Transformamos a tu mejor amigo en una estrella! Nuestro servicio de peluquería canina incluye un corte personalizado que no solo resalta su belleza natural, sino que también asegura su comodidad. Utilizamos productos suaves y técnicas profesionales para que tu mascota luzca y se sienta espectacular."
@@ -153,3 +348,4 @@ description="Nuestro servicio de baños para mascotas no es solo una limpieza pr
         />
 
 -->
+</Layout>
