@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "preact",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
+    "jsxImportSource": "react",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment"
   },
   "extends": "astro/tsconfigs/strict"
 }
