@@ -2,9 +2,13 @@
   class="text-neutral-700 flex items-center justify-between px-4 py-1 border-b-2 border-green-700"
 >
   <!-- Logotipo -->
-    <img src="/assets/logos/logo.png" alt="Peludogs" class="h-12 md:h-24 logoPosition" />
+  <img
+    src="/assets/logos/logo.png"
+    alt="Peludogs"
+    class="h-12 md:h-24 logoPosition"
+  />
 
-      <!-- Botón de menú hamburguesa (visible solo en móvil) -->
+  <!-- Botón de menú hamburguesa (visible solo en móvil) -->
   <button class="md:hidden p-2" aria-label="Toggle menu" id="menuButton">
     <svg
       class="w-6 h-6"
@@ -27,45 +31,58 @@
   >
     <ul class="flex flex-col md:flex-row md:space-x-4 ulHeader">
       <li>
-        <a href="/" class="block px-2 py-1 textHover">Inicio</a>
+        <a href="#home" class="block px-2 py-1 textHover">Inicio</a>
       </li>
       <li>
-        <a href="/services" class="block px-2 py-1 textHover"
-          >Servicios</a
-        >
+        <a href="#services" class="block px-2 py-1 textHover">Servicios</a>
       </li>
       <li>
-        <a href="/product" class="block px-2 py-1 textHover"
-          >Productos</a
-        >
+        <a href="#products" class="block px-2 py-1 textHover">Productos</a>
       </li>
       <li>
-        <a href="/gallery" class="block px-2 py-1 textHover"
-          >Galería</a
-        >
+        <a href="#gallery" class="block px-2 py-1 textHover">Galería</a>
       </li>
       <li>
-        <a href="/testimonials" class="block px-2 py-1 textHover"
-          >Testimonios</a
-        >
+        <a href="#testimonies" class="block px-2 py-1 textHover">Testimonios</a>
       </li>
       <li>
-        <a href="/contact" class="block px-2 py-1 textHover"
-          >Contacto</a
-        >
+        <a href="#contact" class="block px-2 py-1 textHover">Contacto</a>
       </li>
     </ul>
   </nav>
-
 </header>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const menuButton = document.getElementById("menuButton");
     const menu = document.getElementById("menu");
+    const links = menu?.querySelectorAll("a");
+    const offset = -100; // Ajusta este valor según lo que necesites
 
-    menuButton.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
+    menuButton?.addEventListener("click", () => {
+      menu?.classList.toggle("hidden");
+    });
+
+    links?.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const targetId = link?.getAttribute("href")?.substring(1);
+        const targetSection = document.getElementById(targetId || "");
+
+        if (targetSection) {
+          const sectionTop =
+            targetSection.getBoundingClientRect().top +
+            window.pageYOffset +
+            offset;
+          window.scrollTo({ top: sectionTop, behavior: "smooth" });
+
+          // Cerrar el menú después de hacer clic en un enlace
+          if (window.innerWidth < 768) {
+            // Si el ancho de la ventana es menor que 768px (versión móvil)
+            menu?.classList.add("hidden");
+          }
+        }
+      });
     });
   });
 </script>

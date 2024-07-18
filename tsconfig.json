@@ -3,7 +3,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment"
+    "jsxFragmentFactory": "Fragment",
   },
   "extends": "astro/tsconfigs/strict"
 }
