@@ -3,26 +3,26 @@
 >
   <!-- Logotipo -->
   <img
+    id="logo"
     src="/peludogs/assets/logos/logo.png"
     alt="Peludogs"
     class="h-12 md:h-24 logoPosition"
   />
-
   <!-- Botón de menú hamburguesa (visible solo en móvil) -->
   <button class="md:hidden p-2" aria-label="Toggle menu" id="menuButton">
-    <svg
-      class="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M4 6h16M4 12h16m-7 6h7"></path></svg
-    >
+    <i class="fa-solid fa-paw"></i>
   </button>
+
+  <!-- Título visible solo en móvil -->
+  <h1 class="text-lg font-bold font-serif underline md:hidden">Peludogs</h1> 
+  <span class="md:hidden text-center">
+    <img
+    id="logo-mobile"
+    src="/peludogs/assets/logos/logo.png"
+    alt="Peludogs"
+    class="h-11 "
+  />
+  </span>
 
   <!-- Navegación (oculta en móvil y se muestra como desplegable) -->
   <nav
@@ -56,11 +56,17 @@
   document.addEventListener("DOMContentLoaded", () => {
     const menuButton = document.getElementById("menuButton");
     const menu = document.getElementById("menu");
+    const logo = document.getElementById("logo-mobile");
     const links = menu?.querySelectorAll("a");
     const offset = -100; // Ajusta este valor según lo que necesites
 
     menuButton?.addEventListener("click", () => {
       menu?.classList.toggle("hidden");
+      if (menu?.classList.contains("hidden")) {
+        logo?.classList.remove("hidden");
+      } else {
+        logo?.classList.add("hidden");
+      }
     });
 
     links?.forEach((link) => {
@@ -76,6 +82,9 @@
             offset;
           window.scrollTo({ top: sectionTop, behavior: "smooth" });
         }
+        // Ocultar el menú y mostrar el logotipo después de la navegación
+        menu?.classList.add("hidden");
+        logo?.classList.remove("hidden");
       });
     });
   });
