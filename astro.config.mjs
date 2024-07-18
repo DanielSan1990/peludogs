@@ -7,10 +7,10 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   site: 'https://danielsan1990.github.io',
   base: 'peludogs',
-  output: 'static',
   resolve: {
     alias: {
       'astro/errors': 'astro/dist/errors.js'
     }
   },
+  output: 'static',
 });
