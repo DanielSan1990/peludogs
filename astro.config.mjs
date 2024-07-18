@@ -5,12 +5,12 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
+  site: 'https://danielsan1990.github.io',
+  base: 'peludogs',
+  output: 'static',
   resolve: {
     alias: {
       'astro/errors': 'astro/dist/errors.js'
     }
   },
-  site: 'https://danielsan1990.github.io',
-  base: 'peludogs',
-  output: 'static',
 });
