@@ -66,21 +66,15 @@
     links?.forEach((link) => {
       link.addEventListener("click", (event) => {
         event.preventDefault();
-        const targetId = link?.getAttribute("href")?.substring(1);
-        const targetSection = document.getElementById(targetId || "");
+        const targetId = link.getAttribute("href").substring(1);
+        const targetSection = document.getElementById(targetId);
 
         if (targetSection) {
           const sectionTop =
             targetSection.getBoundingClientRect().top +
-            window.pageYOffset +
+            window.scrollY + // Reemplazado pageYOffset por scrollY
             offset;
           window.scrollTo({ top: sectionTop, behavior: "smooth" });
-
-          // Cerrar el menú después de hacer clic en un enlace
-          if (window.innerWidth < 768) {
-            // Si el ancho de la ventana es menor que 768px (versión móvil)
-            menu?.classList.add("hidden");
-          }
         }
       });
     });

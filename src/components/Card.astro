@@ -1,5 +1,5 @@
 ---
-const { title, imageSrc, description, sectionSrc } = Astro.props;
+const { title, imageSrc, description } = Astro.props;
 const phoneNumber = "1234567890"; // Reemplaza con el número de teléfono al que deseas enviar el mensaje
 const message = `Hola, estoy interesado en saber más sobre ${title}.`; // Mensaje predefinido
 const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

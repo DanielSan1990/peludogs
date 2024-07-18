@@ -144,7 +144,7 @@ import Gallery from "../components/Gallery";
   document.addEventListener("DOMContentLoaded", () => {
     const hideElfsightWidget = () => {
       const elfsightLink = document.querySelector('a[href*="elfsight.com/google-reviews-widget"]');
-      if (elfsightLink) {
+      if (elfsightLink instanceof HTMLElement) {
         elfsightLink.style.display = 'none';
       }
     };
