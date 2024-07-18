@@ -9,5 +9,8 @@ export default defineConfig({
     alias: {
       'astro/errors': 'astro/dist/errors.js'
     }
-  }
+  },
+  site: 'https://danielsan1990.github.io',
+  base: 'peludogs',
+  output: 'static',
 });
