@@ -9,7 +9,7 @@ const Gallery = () => {
     const fetchImages = async () => {
       const imageModules = import.meta.glob('/public/assets/images/carousel/*.{jpg,png}', { eager: true });
       const imagePaths = Object.keys(imageModules).map((path) => {
-        // Ajustar el path para que sea accesible desde el navegador
+        //  Ajustar el path para que sea accesible desde el navegador
         return path.replace('/public', '');
       });
       setImages(imagePaths);
