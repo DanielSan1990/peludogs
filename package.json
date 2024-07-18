@@ -21,6 +21,7 @@
     "typescript": "^5.4.3"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30"
+    "@types/node": "^20.11.30",
+    "astro": "^1.0.0"
   }
 }
