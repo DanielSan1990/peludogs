@@ -9,12 +9,20 @@
     class="h-12 md:h-24 logoPosition"
   />
   <!-- Botón de menú hamburguesa (visible solo en móvil) -->
-  <button class="md:hidden p-2" aria-label="Toggle menu" id="menuButton">
+  <button
+    class="md:hidden p-2 mr-2 shadow flex flex-col items-center"
+    aria-label="Toggle menu"
+    id="menuButton"
+  >
     <i class="fa-solid fa-paw"></i>
+    <i class="fa-solid fa-ellipsis icon-fa-ellipsis"></i>
   </button>
-
   <!-- Título visible solo en móvil -->
-  <h1 class="text-lg font-bold font-serif underline md:hidden">Peludogs</h1>
+  <h1
+    class="header-title-mobile text-lg font-bold font-serif underline md:hidden"
+  >
+    Peludogs
+  </h1>
   <span class="md:hidden text-center">
     <img
       id="logo-mobile"
@@ -50,6 +58,13 @@
       </li>
     </ul>
   </nav>
+  <!-- Botón de "Pedir Cita" (visible solo en escritorio) -->
+  <a
+    href="#contact"
+    class="contactButtonPosition hidden md:inline-block bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800"
+  >
+    Pedir Cita
+  </a>
 </header>
 
 <script src="../utils/header.js"></script>

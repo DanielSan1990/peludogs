@@ -55,10 +55,21 @@ header:hover {
   font-family: "Playwrite HR Lijeva", cursive;
 }
 
+.icon-fa-ellipsis{
+  font-size: .8rem;
+  margin: -3px;
+}
+
 .logoPosition {
   position: absolute;
   margin-left: 250px;
   transition: opacity 0.5s; 
+}
+
+.contactButtonPosition {
+  position: absolute;
+  right: 125px;
+  transition: opacity 0.5s;
 }
 
 .ulHeader {
@@ -108,6 +119,10 @@ header:hover {
 /* Estilos responsivos */
 @media (max-width: 1280px) {
   .logoPosition {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .contactButtonPosition {
     opacity: 0;
     visibility: hidden;
   }
