@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Gallery from "../components/Gallery";
+import "../styles/index.css";
 ---
 
 <Layout title="Bienvenido a Peludogs">
@@ -12,6 +13,7 @@ import Gallery from "../components/Gallery";
         Tu navegador no soporta el elemento de video.
       </video>
     </div>
+    
     <section id="services" class="my-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
@@ -29,23 +31,21 @@ import Gallery from "../components/Gallery";
             title="Peluquería"
             imageSrc="/peludogs/assets/images/servicio_1.jpg"
             description="Transformamos a tu mascota en una estrella con cortes personalizados que destacan su belleza y aseguran su comodidad. Utilizamos productos suaves y técnicas profesionales para que tu amigo luzca y se sienta espectacular."
-            sectionSrc="/products"
           />
           <Card
             title="Corte de uñas"
             imageSrc="/peludogs/assets/images/servicio_2.jpg"
             description="Nos enfocamos en la salud de las patas de tu mascota con un servicio de corte de uñas rápido, seguro y cómodo, evitando molestias y promoviendo una marcha saludable."
-            sectionSrc="/products"
           />
           <Card
             title="Baño"
             imageSrc="/peludogs/assets/images/servicio_3.jpg"
             description="Ofrecemos un baño que es más que una limpieza, es una experiencia de mimos y relajación. Usamos champús especiales para cuidar la piel y el pelo de tu mascota, dejándola con un aroma fresco y un pelaje suave y brillante."
-            sectionSrc="/products"
           />
         </div>
       </div>
     </section>
+    
     <section id="products" class="mt-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
@@ -62,22 +62,20 @@ import Gallery from "../components/Gallery";
           title="Comida para perros"
           imageSrc="/peludogs/assets/images/producto_1.jpg"
           description="Nutre a tu fiel amigo con nuestra selección premium de alimentos para perros."
-          sectionSrc="/products"
         />
         <Card
           title="Snacks y Chuches"
           imageSrc="/peludogs/assets/images/producto_2.jpg"
           description="Consiente a tu perro con nuestros deliciosos snacks y chuches."
-          sectionSrc="/products"
         />
         <Card
           title="Accesorios y Juguetes"
           imageSrc="/peludogs/assets/images/producto_3.jpg"
           description="Descubre el paraíso de los juguetes y accesorios para tu perro en nuestra tienda."
-          sectionSrc="/products"
         />
       </ul>
     </section>
+    
     <section id="gallery" class="mt-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
@@ -88,6 +86,7 @@ import Gallery from "../components/Gallery";
         <Gallery client:load />
       </div>
     </section>
+    
     <section id="testimonies" class="mt-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700 mb-4"></div>
@@ -99,6 +98,7 @@ import Gallery from "../components/Gallery";
         <div class="elfsight-app-b5b171a3-026e-40d5-a8c0-8d8602e30140" data-elfsight-app-lazy></div>
       </div>
     </section>
+    
     <section id="contact" class="mt-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
@@ -140,16 +140,4 @@ import Gallery from "../components/Gallery";
   </main>
 </Layout>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const hideElfsightWidget = () => {
-      const elfsightLink = document.querySelector('a[href*="elfsight.com/google-reviews-widget"]');
-      if (elfsightLink instanceof HTMLElement) {
-        elfsightLink.style.display = 'none';
-      }
-    };
-
-    hideElfsightWidget();
-    setTimeout(hideElfsightWidget, 5000);
-  });
-</script>
+<script src="/src/utils/hideElfsightWidget.js"></script>

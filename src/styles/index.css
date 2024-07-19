@@ -1,3 +1,4 @@
+/* Variables CSS */
 :root {
   --accent: 136, 58, 234;
   --accent-light: 224, 204, 250;
@@ -9,49 +10,55 @@
     white 60%
   );
 }
+
+/* Estilos generales */
 html {
   font-family: "Montserrat", sans-serif;
   background: #ffffff;
   background-size: 224px;
 }
+
+body {
+  margin-top: 90px; 
+}
+
 main {
   margin: auto;
   padding: 1rem;
   width: 1200px;
   max-width: calc(100% - 2rem);
-
   font-size: 20px;
   line-height: 1.6;
 }
 
+/* Estilos del header */
 header {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 500px;
   width: 100%;
-  z-index: 1000; /* Asegúrate de que el z-index sea alto para que el header esté por encima de otros elementos */
-  background-color: #ffffff; /* Añade un fondo para evitar transparencia */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra para destacar el header */
+  z-index: 1000; 
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: background-color 1s, box-shadow 1s, transform 1s; /* Transición de 1 segundo */
+  transition: background-color 1s, box-shadow 1s, transform 1s;
 }
 
 header:hover {
-  background-color: #f1f1f1; /* Cambia el color de fondo al pasar el ratón */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
-  transform: scale(1.05); /* Efecto de zoom */
+  background-color: #f1f1f1; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
-body {
-  margin-top: 90px; /* Ajusta el margen superior del body para que el contenido no quede oculto bajo el header */
+.header-title-mobile {
+  font-family: "Playwrite HR Lijeva", cursive;
 }
 
 .logoPosition {
   position: absolute;
   margin-left: 250px;
-  transition: opacity 0.5s; /* Transición suave para desaparecer */
+  transition: opacity 0.5s; 
 }
 
 .ulHeader {
@@ -62,6 +69,7 @@ body {
   color: rgb(21, 128, 61);
 }
 
+/* Estilos de componentes específicos */
 .containerTop {
   position: relative;
   top: 10px;
@@ -74,24 +82,12 @@ body {
   padding: 0;
 }
 
-/* Ocultar el logotipo en pantallas pequeñas */
-@media (max-width: 1280px) {
-  .logoPosition {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 .slider-container {
   margin: auto;
   max-width: 800px;
   text-align: center;
 }
-@media (max-width: 1280px) {
-  .slider-container {
-    max-width: 300px;
-  }
-}
+
 .carousel .slide img {
   margin-top: 25px;
   width: 100%;
@@ -102,8 +98,20 @@ body {
   max-width: 750px;
   border-radius: 5px !important;
 }
+
 .carousel .slider-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1280px) {
+  .logoPosition {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .slider-container {
+    max-width: 300px;
+  }
 }

@@ -8,10 +8,7 @@ const Gallery = () => {
   useEffect(() => {
     const fetchImages = async () => {
       const imageModules = import.meta.glob('/public/assets/images/carousel/*.{jpg,png}', { eager: true });
-      const imagePaths = Object.keys(imageModules).map((path) => {
-        // Ajustar el path para que sea accesible desde el navegador
-        return path.replace('/public', '/peludogs');  // Asegúrate de que '/peludogs' coincide con tu configuración de base URL
-      });
+      const imagePaths = Object.keys(imageModules).map((path) => path.replace('/public', '/peludogs'));
       setImages(imagePaths);
     };
 
