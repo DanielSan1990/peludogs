@@ -2,7 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Gallery from "../components/Gallery";
+import { PHONE_NUMBER } from "../constants/common";
+import { getWhatsappLink } from "../utils/common";
 import "../styles/index.css";
+
+const message = `Hola, me gustaría concertar una cita con Peludogs.`;
 ---
 
 <Layout title="Bienvenido a Peludogs">
@@ -138,43 +142,48 @@ import "../styles/index.css";
       <div
         class="container mx-auto p-6 bg-white rounded-lg shadow-lg overflow-hidden group relative"
       >
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div class="flex flex-col justify-between">
-            <form
-              action="/send-form"
-              method="POST"
-              class="flex flex-col space-y-4 h-full"
-            >
-              <input
-                type="text"
-                name="name"
-                placeholder="Nombre"
-                class="border p-2 rounded"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Correo electrónico"
-                class="border p-2 rounded"
-              />
-              <input
-                type="text"
-                name="subject"
-                placeholder="Asunto"
-                class="border p-2 rounded"
-              />
-              <textarea
-                name="message"
-                placeholder="Mensaje"
-                class="border p-2 rounded"
-                rows="5"></textarea>
-              <button
-                type="submit"
-                class="bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded"
-                >Enviar</button
-              >
-            </form>
-          </div>
+      <div class="flex flex-col justify-between">
+        <form
+          id="contact-form"
+          class="flex flex-col space-y-4 h-full"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            class="border p-2 rounded"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            class="border p-2 rounded"
+            required
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Asunto"
+            class="border p-2 rounded"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Mensaje"
+            class="border p-2 rounded"
+            rows="5"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+
           <div class="flex flex-col justify-between  mt-4">
             <div>
               <p class="font-semibold text-gray-800">Peludogs</p>
@@ -190,9 +199,12 @@ import "../styles/index.css";
               <p class="text-gray-600">Email: contacto@peludogs.com</p>
               <p class="text-gray-600">Horario: L - V 10:00-18:00</p>
             </div>
-            <button
-              class="bg-green-700 hover:bg-green-500 w-full text-white font-bold mt-4 py-2 px-4 rounded"
-              >Pedir cita</button
+            <a
+              class="bg-green-700 hover:bg-green-500 w-full text-white text-center font-bold mt-4 py-2 px-4 rounded"
+              href={getWhatsappLink(PHONE_NUMBER, message)}
+              target="_blank"
+              rel="noopener noreferrer"
+              > Pedir cita</a
             >
           </div>
         </div>
@@ -209,4 +221,5 @@ import "../styles/index.css";
   </main>
 </Layout>
 
-<script src="/src/utils/hideElfsightWidget.js"></script>
+<script src="../utils/hideElfsightWidget.js"></script>
+<script src="../utils/sendEmail.js"></script>
