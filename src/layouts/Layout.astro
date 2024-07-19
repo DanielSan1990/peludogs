@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import CookieConsent from "../components/CookieConsent.astro";
 import { META } from "../constants/meta";
 import "../styles/index.css";
+import { MESSAGE_COOKIE_CONSENT } from "@constants/common";
 
 interface Props {
   title: string;
@@ -36,7 +37,7 @@ const { title } = Astro.props;
     <slot />
     <Footer />
     <CookieConsent
-      message="Usamos cookies propias y de terceros para mejorar el funcionamiento y rendimiento de nuestro sitio web, analizar el tráfico y personalizar el contenido. Las cookies permiten ciertas funcionalidades esenciales y nos ayudan a entender cómo se utiliza nuestro sitio para ofrecer una mejor experiencia de usuario. Puede aceptar todas las cookies o rechazarlas."
+      message={MESSAGE_COOKIE_CONSENT}
       acceptText="Aceptar"
       rejectText="Rechazar"
     />

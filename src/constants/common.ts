@@ -1,4 +1,4 @@
-export const PHONE_NUMBER = "658307250"; 
+export const PHONE_NUMBER = "658307250";
 
 export const PRIVACY_TEXT = `
   <p>En <strong>Peludogs</strong>, nos comprometemos a proteger tu privacidad y garantizar que tus datos personales estén seguros. Esta política de privacidad explica cómo recopilamos, utilizamos y protegemos tus datos personales.</p>
@@ -45,7 +45,6 @@ export const PRIVACY_TEXT = `
   <p>Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Te informaremos de cualquier cambio a través de nuestro sitio web o por correo electrónico.</p>
 `;
 
-
 export const TERMS_TEXT = `
   <p>Bienvenido a <strong>Peludogs</strong>. Al utilizar nuestro sitio web y servicios, aceptas los siguientes términos y condiciones:</p>
   
@@ -78,3 +77,6 @@ export const TERMS_TEXT = `
   <h3>8. Contacto</h3>
   <p>Si tienes alguna pregunta sobre estos términos y condiciones, puedes contactarnos en contacto@peludogs.com.</p>
 `;
+
+export const MESSAGE_COOKIE_CONSENT =
+  "Usamos cookies propias y de terceros para mejorar el funcionamiento y rendimiento de nuestro sitio web, analizar el tráfico y personalizar el contenido. Las cookies permiten ciertas funcionalidades esenciales y nos ayudan a entender cómo se utiliza nuestro sitio para ofrecer una mejor experiencia de usuario. Puede aceptar todas las cookies o rechazarlas.";
