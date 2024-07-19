@@ -1,10 +1,10 @@
 ---
+import { getWhatsappLink } from "@utils/common";
 import { PHONE_NUMBER } from "../constants/common";
 
 const { title, imageSrc, description } = Astro.props;
 
 const message = `Hola, estoy interesado en saber más sobre ${title}.`;
-const whatsappLink = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
 ---
 
 <div class="bg-white rounded-lg shadow-lg overflow-hidden group relative pb-2">
@@ -24,7 +24,7 @@ const whatsappLink = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(me
   <div class="absolute bottom-0 right-2">
     <small>
       <a
-        href={whatsappLink}
+        href={getWhatsappLink(PHONE_NUMBER, message)}
         class="text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out"
         target="_blank"
         rel="noopener noreferrer"

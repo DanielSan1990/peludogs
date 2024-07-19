@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import { META } from "../constants/meta";
 import "../styles/index.css";
 
@@ -24,13 +25,20 @@ const { title } = Astro.props;
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    {META.googleFonts.map(fontUrl => (
-      <link href={fontUrl} rel="stylesheet" />
-    ))}
+    {
+      META.googleFonts.map((fontUrl) => (
+        <link href={fontUrl} rel="stylesheet" />
+      ))
+    }
   </head>
   <body>
     <Header />
     <slot />
     <Footer />
+    <CookieConsent
+      message="Usamos cookies propias y de terceros para mejorar el funcionamiento y rendimiento de nuestro sitio web, analizar el tráfico y personalizar el contenido. Las cookies permiten ciertas funcionalidades esenciales y nos ayudan a entender cómo se utiliza nuestro sitio para ofrecer una mejor experiencia de usuario. Puede aceptar todas las cookies o rechazarlas."
+      acceptText="Aceptar"
+      rejectText="Rechazar"
+    />
   </body>
 </html>

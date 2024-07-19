@@ -1,3 +1,10 @@
+---
+import { PHONE_NUMBER } from "@constants/common";
+import { getWhatsappLink } from "@utils/common";
+
+const message = `Hola, me gustarían concertar una cita con Peludogs.`;
+---
+
 <header
   class="text-neutral-700 flex items-center justify-between px-4 py-1 border-b-2 border-green-700"
 >
@@ -60,7 +67,9 @@
   </nav>
   <!-- Botón de "Pedir Cita" (visible solo en escritorio) -->
   <a
-    href="#contact"
+    href={getWhatsappLink(PHONE_NUMBER, message)}
+    target="_blank"
+    rel="noopener noreferrer"
     class="contactButtonPosition hidden md:inline-block bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800"
   >
     Pedir Cita

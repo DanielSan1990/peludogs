@@ -130,3 +130,54 @@ header:hover {
     max-width: 300px;
   }
 }
+
+/* Estilos para el modal */
+.modal-hidden {
+  display: none;
+}
+
+.bg-smoke-light {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  max-height: 80vh;
+  overflow-y: auto; 
+}
+
+/* Estilos para el cookieContent */
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+.cookie-consent.hidden {
+  transform: translateY(100%);
+}
+.cookie-consent button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+.cookie-consent button:hover {
+  background-color: #45a049;
+}
+.cookie-consent .reject-button {
+  background-color: #f44336;
+}
+.cookie-consent .reject-button:hover {
+  background-color: #e53935;
+}

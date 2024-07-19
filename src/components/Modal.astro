@@ -1,0 +1,13 @@
+---
+const { id, title, content } = Astro.props;
+---
+
+<div id={id} class=" fixed inset-0 modal-hidden z-50 overflow-auto bg-smoke-light flex">
+    <div class="modal-content  relative p-8 bg-white w-full max-w-md m-auto flex-col flex rounded-lg modal-content">
+      <span class="absolute top-0 right-0 p-4 text-gray-600 cursor-pointer modal-close">&times;</span>
+      <div class="mt-4">
+        <h2>{title}</h2>
+        <div set:html={content}></div>
+      </div>
+    </div>
+  </div>

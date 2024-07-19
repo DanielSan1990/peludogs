@@ -139,11 +139,11 @@ import "../styles/index.css";
         class="container mx-auto p-6 bg-white rounded-lg shadow-lg overflow-hidden group relative"
       >
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
+          <div class="flex flex-col justify-between">
             <form
               action="/send-form"
               method="POST"
-              class="flex flex-col space-y-4"
+              class="flex flex-col space-y-4 h-full"
             >
               <input
                 type="text"
@@ -175,19 +175,21 @@ import "../styles/index.css";
               >
             </form>
           </div>
-          <div class="mb-6 mt-4">
-            <p class="font-semibold text-gray-800">Peludogs</p>
-            <p class="text-gray-600">
-              Calle Sgto. Provisional, 61, 38010 Santa Cruz de Tenerife
-            </p>
-            <p class="text-gray-600">
-              Teléfono: <a href="tel:+34658307250" class="hover:text-green-700"
-                >+34 658 30 72 50</a
-              >
-            </p>
-            <p class="text-gray-600">Email: contacto@peludogs.com</p>
-            <p class="text-gray-600">Horario: L - V 10:00-18:00</p>
-
+          <div class="flex flex-col justify-between  mt-4">
+            <div>
+              <p class="font-semibold text-gray-800">Peludogs</p>
+              <p class="text-gray-600">
+                Calle Sgto. Provisional, 61, 38010 Santa Cruz de Tenerife
+              </p>
+              <p class="text-gray-600">
+                Teléfono: <a
+                  href="tel:+34658307250"
+                  class="hover:text-green-700">+34 658 30 72 50</a
+                >
+              </p>
+              <p class="text-gray-600">Email: contacto@peludogs.com</p>
+              <p class="text-gray-600">Horario: L - V 10:00-18:00</p>
+            </div>
             <button
               class="bg-green-700 hover:bg-green-500 w-full text-white font-bold mt-4 py-2 px-4 rounded"
               >Pedir cita</button
