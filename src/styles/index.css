@@ -84,7 +84,6 @@ header:hover {
 
 /* Estilos responsivos */
 @media (max-width: 860px) {
-
   .contactButtonPosition {
     opacity: 0;
     visibility: hidden;
@@ -142,8 +141,6 @@ header:hover {
   border-radius: 5px;
 }
 
-
-
 /* Estilos para el modal */
 .modal-hidden {
   display: none;
@@ -175,22 +172,27 @@ header:hover {
 .cookie-consent.hidden {
   transform: translateY(100%);
 }
+
 .cookie-consent button {
-  background-color: #388e3c; 
-  color: white;
+  background-color: #004085; 
+  color: #ffffff; 
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 5px;
   margin-left: 0.5rem;
   margin-top: 0.5rem;
+  height: 100px;
 }
+
 .cookie-consent button:hover {
-  background-color: #2e7d32;
+  background-color: #002752;
 }
+
 .cookie-consent .reject-button {
-  background-color: #d32f2f; 
+  background-color: #bd2130;
 }
+
 .cookie-consent .reject-button:hover {
-  background-color: #c62828; 
+  background-color: #84151e;
 }
