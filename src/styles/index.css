@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  margin-top: 90px; 
+  margin-top: 90px;
 }
 
 main {
@@ -37,16 +37,19 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; 
+  z-index: 1000;
   background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: background-color 1s, box-shadow 1s, transform 1s;
+  transition:
+    background-color 1s,
+    box-shadow 1s,
+    transform 1s;
 }
 
 header:hover {
-  background-color: #f1f1f1; 
+  background-color: #f1f1f1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
@@ -55,21 +58,37 @@ header:hover {
   font-family: "Playwrite HR Lijeva", cursive;
 }
 
-.icon-fa-ellipsis{
-  font-size: .8rem;
+.icon-fa-ellipsis {
+  font-size: 0.8rem;
   margin: -3px;
 }
 
 .logoPosition {
   position: absolute;
   margin-left: 250px;
-  transition: opacity 0.5s; 
+  transition: opacity 0.5s;
+}
+
+@media (max-width: 860px) {
+  .logoPosition {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .contactButtonPosition {
   position: absolute;
   right: 125px;
   transition: opacity 0.5s;
+}
+
+/* Estilos responsivos */
+@media (max-width: 860px) {
+
+  .contactButtonPosition {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .ulHeader {
@@ -79,7 +98,6 @@ header:hover {
 .textHover:hover {
   color: rgb(21, 128, 61);
 }
-
 
 /* Estilos de componentes específicos */
 .containerTop {
@@ -94,7 +112,6 @@ header:hover {
   padding: 0;
 }
 
-
 /* Estilos de la galería de imágenes */
 .slider-container {
   margin: auto;
@@ -102,10 +119,16 @@ header:hover {
   text-align: center;
 }
 
+@media (max-width: 350px) {
+  .slider-container {
+    max-width: 300px;
+  }
+}
+
 .image-gallery-slide img {
   border-radius: 5px;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   object-fit: cover;
 }
 
@@ -120,20 +143,6 @@ header:hover {
 }
 
 
-/* Estilos responsivos */
-@media (max-width: 1280px) {
-  .logoPosition {
-    opacity: 0;
-    visibility: hidden;
-  }
-  .contactButtonPosition {
-    opacity: 0;
-    visibility: hidden;
-  }
-  .slider-container {
-    max-width: 300px;
-  }
-}
 
 /* Estilos para el modal */
 .modal-hidden {
@@ -146,7 +155,7 @@ header:hover {
 
 .modal-content {
   max-height: 80vh;
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 /* Estilos para el cookieContent */

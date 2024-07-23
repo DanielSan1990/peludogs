@@ -1,16 +1,21 @@
-import { useEffect, useState } from 'react';
-import ImageGallery from 'react-image-gallery';
-import 'react-image-gallery/styles/css/image-gallery.css';
+import { useEffect, useState } from "react";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
     const fetchImages = async () => {
-      const imageModules = import.meta.glob('/public/assets/images/carousel/*.{jpg,png}', { eager: true });
+      const imageModules = import.meta.glob(
+        "/public/assets/images/carousel/*.{jpg,png}",
+        { eager: true }
+      );
       const imagePaths = Object.keys(imageModules).map((path) => ({
-        original: path.replace('/public', '/peludogs'),
-        thumbnail: path.replace('/public', '/peludogs')
+        original: path.replace("/public", "/peludogs"),
+        thumbnail: path.replace("/public", "/peludogs"),
+        originalAlt: `Gallery image ${index + 1}`,
+        thumbnailAlt: `Thumbnail image ${index + 1}`,
       }));
       setImages(imagePaths);
     };
@@ -24,7 +29,13 @@ const Gallery = () => {
 
   return (
     <div className="slider-container">
-      <ImageGallery items={images} showThumbnails thumbnailPosition={'left'}  showPlayButton={false} autoPlay />
+      <ImageGallery
+        items={images}
+        showThumbnails
+        thumbnailPosition={"left"}
+        showPlayButton={false}
+        autoPlay
+      />
     </div>
   );
 };
