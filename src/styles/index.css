@@ -80,6 +80,7 @@ header:hover {
   color: rgb(21, 128, 61);
 }
 
+
 /* Estilos de componentes específicos */
 .containerTop {
   position: relative;
@@ -93,28 +94,31 @@ header:hover {
   padding: 0;
 }
 
+
+/* Estilos de la galería de imágenes */
 .slider-container {
   margin: auto;
-  max-width: 800px;
+  max-width: 1200px;
   text-align: center;
 }
 
-.carousel .slide img {
-  margin-top: 25px;
+.image-gallery-slide img {
+  border-radius: 5px;
   width: 100%;
-  vertical-align: bottom;
-  border: 0;
-  object-fit: contain;
-  max-height: 350px;
-  max-width: 750px;
-  border-radius: 5px !important;
+  height: 100%; 
+  object-fit: cover;
 }
 
-.carousel .slider-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.image-gallery-content .image-gallery-slide {
+  border-radius: 5px;
+  width: 100%;
+  background-color: #000;
 }
+
+.image-gallery-thumbnail img {
+  border-radius: 5px;
+}
+
 
 /* Estilos responsivos */
 @media (max-width: 1280px) {

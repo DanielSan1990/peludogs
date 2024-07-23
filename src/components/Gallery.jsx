@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import ImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -8,7 +8,10 @@ const Gallery = () => {
   useEffect(() => {
     const fetchImages = async () => {
       const imageModules = import.meta.glob('/public/assets/images/carousel/*.{jpg,png}', { eager: true });
-      const imagePaths = Object.keys(imageModules).map((path) => path.replace('/public', '/peludogs'));
+      const imagePaths = Object.keys(imageModules).map((path) => ({
+        original: path.replace('/public', '/peludogs'),
+        thumbnail: path.replace('/public', '/peludogs')
+      }));
       setImages(imagePaths);
     };
 
@@ -21,13 +24,7 @@ const Gallery = () => {
 
   return (
     <div className="slider-container">
-      <Carousel showIndicators={false} showStatus={false} showArrows={false} autoPlay infiniteLoop>
-        {images.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`Gallery image ${index + 1}`} style={{ borderRadius: '5px' }} />
-          </div>
-        ))}
-      </Carousel>
+      <ImageGallery items={images} showThumbnails thumbnailPosition={'left'}  showPlayButton={false} autoPlay />
     </div>
   );
 };
