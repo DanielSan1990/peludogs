@@ -8,7 +8,7 @@ const Gallery = () => {
   useEffect(() => {
     const fetchImages = async () => {
       const imageModules = import.meta.glob(
-        "/public/assets/images/carousel/*.{jpg,png}",
+        "/public/assets/images/carousel/*.{jpg,png,webp,avif}",
         { eager: true }
       );
       const imagePaths = Object.keys(imageModules).map((path, index) => ({
@@ -16,6 +16,7 @@ const Gallery = () => {
         thumbnail: path.replace("/public", "/peludogs"),
         originalAlt: `Gallery image ${index + 1}`,
         thumbnailAlt: `Thumbnail image ${index + 1}`,
+        loading: "lazy"
       }));
       setImages(imagePaths);
     };
@@ -35,6 +36,7 @@ const Gallery = () => {
         thumbnailPosition={"left"}
         showPlayButton={false}
         autoPlay
+        lazyLoad={true}  // Habilita lazy loading
       />
     </div>
   );
