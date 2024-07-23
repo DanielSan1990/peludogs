@@ -11,7 +11,7 @@ const Gallery = () => {
         "/public/assets/images/carousel/*.{jpg,png}",
         { eager: true }
       );
-      const imagePaths = Object.keys(imageModules).map((path) => ({
+      const imagePaths = Object.keys(imageModules).map((path, index) => ({
         original: path.replace("/public", "/peludogs"),
         thumbnail: path.replace("/public", "/peludogs"),
         originalAlt: `Gallery image ${index + 1}`,
