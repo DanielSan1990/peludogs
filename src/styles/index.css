@@ -14,12 +14,11 @@
 /* Estilos generales */
 html {
   font-family: "Montserrat", sans-serif;
-  background: #ffffff;
-  background-size: 224px;
 }
 
 body {
   margin-top: 90px;
+  @apply bg-white text-black dark:bg-gray-900 dark:text-white;
 }
 
 main {
@@ -29,6 +28,7 @@ main {
   max-width: calc(100% - 2rem);
   font-size: 20px;
   line-height: 1.6;
+  @apply bg-white text-black dark:bg-gray-900 dark:text-white;
 }
 
 /* Estilos del header */
@@ -38,7 +38,6 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding-top: 0rem;
   padding-bottom: 0rem;
@@ -46,12 +45,13 @@ header {
     background-color 1s,
     box-shadow 1s,
     transform 1s;
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
 }
 
 header:hover {
-  background-color: #f1f1f1;
+  @apply bg-white dark:bg-gray-800;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .header-title-mobile {
@@ -65,8 +65,29 @@ header:hover {
 
 .logoPosition {
   position: absolute;
-  margin-left: 250px;
+  margin-left: 225px;
   transition: opacity 0.5s;
+}
+
+.buttonThemePosition {
+  position: absolute;
+  right: 272px;
+  top: 32px;
+}
+
+@media (max-width: 860px) {
+  .buttonThemePosition {
+    position: absolute;
+    right: 43px;
+    top: 35px;
+  }
+}
+@media (max-width: 750px) {
+  .buttonThemePosition {
+    position: absolute;
+    right: 43px;
+    top: 110px;
+  }
 }
 
 @media (max-width: 860px) {
@@ -80,6 +101,11 @@ header:hover {
   position: absolute;
   right: 125px;
   transition: opacity 0.5s;
+  @apply bg-green-700 hover:bg-green-800 text-white;
+}
+
+.contactButtonPosition.dark {
+  @apply bg-green-600 hover:bg-green-700 text-white;
 }
 
 /* Estilos responsivos */
@@ -96,12 +122,14 @@ header:hover {
 
 .textHover:hover {
   color: rgb(21, 128, 61);
+  @apply text-green-700 dark:text-green-400;
 }
 
 /* Estilos de componentes específicos */
 .containerTop {
   position: relative;
   top: 10px;
+  @apply bg-white dark:bg-gray-900;
 }
 
 .link-card-grid {
@@ -116,6 +144,7 @@ header:hover {
   margin: auto;
   max-width: 1200px;
   text-align: center;
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
 }
 
 @media (max-width: 350px) {
@@ -135,6 +164,7 @@ header:hover {
   border-radius: 5px;
   width: 100%;
   background-color: #000;
+  @apply bg-black dark:bg-gray-800;
 }
 
 .image-gallery-thumbnail img {
@@ -174,15 +204,14 @@ header:hover {
 }
 
 .cookie-consent button {
-  background-color: #004085; 
-  color: #ffffff; 
+  background-color: #004085;
+  color: #ffffff;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 5px;
   margin-left: 0.5rem;
   margin-top: 0.5rem;
-  height: 100px;
 }
 
 .cookie-consent button:hover {
@@ -195,4 +224,21 @@ header:hover {
 
 .cookie-consent .reject-button:hover {
   background-color: #84151e;
+}
+
+/* Estilos para las reseñas de google */
+.bAAKYH {
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
+
+.bxloCP {
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
+
+.fOLOsK {
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
+
+.gVYKGX {
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
 }

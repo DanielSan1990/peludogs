@@ -11,8 +11,7 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
 
 <Layout title="Bienvenido a Peludogs">
   <main id="home">
-
-    <div class="w-full rounded-lg overflow-hidden">
+    <div class="w-full rounded-lg overflow-hidden mt-5">
       <video width="100%" height="auto" autoplay loop muted preload="auto">
         <source src="/peludogs/assets/video/gosbi_publi.mp4" type="video/mp4" />
         Tu navegador no soporta el elemento de video.
@@ -22,7 +21,7 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
     <section id="services" class="my-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
-        <h1 class="px-4 text-2xl font-bold text-neutral-700">
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
           Nuestros servicios
         </h1>
         <div class="flex-grow h-0.5 bg-green-700"></div>
@@ -62,7 +61,7 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
     <section id="products" class="mt-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
-        <h1 class="px-4 text-2xl font-bold text-neutral-700">
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
           Nuestros productos
         </h1>
         <div class="flex-grow h-0.5 bg-green-700"></div>
@@ -100,11 +99,13 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
     <section id="gallery" class="mt-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
-        <h1 class="px-4 text-2xl font-bold text-neutral-700">Galería</h1>
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
+          Galería
+        </h1>
         <div class="flex-grow h-0.5 bg-green-700"></div>
       </div>
       <div
-        class="flex items-center mt-8 bg-white rounded-lg shadow-lg overflow-hidden group relative p-6"
+        class="flex items-center mt-8 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 rounded-lg shadow-lg overflow-hidden group relative p-6"
       >
         <Gallery client:load />
       </div>
@@ -112,14 +113,14 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
 
     <section id="testimonies" class="mt-8">
       <div class="flex items-center">
-        <div class="flex-grow h-0.5 bg-green-700 mb-4"></div>
-        <h1 class="px-4 text-2xl font-bold text-neutral-700">
-          Nuestros clientes opinan
+        <div class="flex-grow h-0.5 bg-green-700 "></div>
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
+          Opiniones
         </h1>
         <div class="flex-grow h-0.5 bg-green-700"></div>
       </div>
       <div
-        class="mt-8 bg-white rounded-lg shadow-lg overflow-hidden group relative p-6"
+        class="mt-8 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 rounded-lg shadow-lg overflow-hidden group relative p-6"
       >
         <script
           src="https://static.elfsight.com/platform/platform.js"
@@ -127,7 +128,7 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
           defer
           is:inline></script>
         <div
-          class="elfsight-app-b5b171a3-026e-40d5-a8c0-8d8602e30140"
+          class="elfsight-app-b5b171a3-026e-40d5-a8c0-8d8602e30140 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100"
           data-elfsight-app-lazy
         >
         </div>
@@ -137,11 +138,13 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
     <section id="contact" class="mt-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
-        <h1 class="px-4 text-2xl font-bold text-neutral-700">Contacto</h1>
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
+          Contacto
+        </h1>
         <div class="flex-grow h-0.5 bg-green-700"></div>
       </div>
       <div
-        class="container mx-auto p-6 bg-white rounded-lg shadow-lg overflow-hidden group relative"
+        class="container mx-auto p-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 rounded-lg shadow-lg overflow-hidden group relative"
       >
         <div class="flex flex-col justify-between">
           <form id="contact-form" class="flex flex-col space-y-4 h-full">
@@ -181,19 +184,19 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
           </form>
         </div>
 
-        <div class="flex flex-col justify-between mt-4">
+        <div
+          class="text-gray-600 dark:text-gray-100 flex flex-col justify-between mt-4"
+        >
           <div>
-            <p class="font-semibold text-gray-800">Peludogs</p>
-            <p class="text-gray-600">
-              Calle Sgto. Provisional, 61, 38010 Santa Cruz de Tenerife
-            </p>
-            <p class="text-gray-600">
+            <p class="font-semibold text-gray-800 dark:text-white">Peludogs</p>
+            <p>Calle Sgto. Provisional, 61, 38010 Santa Cruz de Tenerife</p>
+            <p>
               Teléfono: <a href="tel:+34658307250" class="hover:text-green-700"
                 >+34 658 30 72 50</a
               >
             </p>
-            <p class="text-gray-600">Email: contacto@peludogs.com</p>
-            <p class="text-gray-600">Horario: L - V 10:00-18:00</p>
+            <p>Email: contacto@peludogs.com</p>
+            <p>Horario: L - V 10:00-18:00</p>
           </div>
           <a
             class="bg-green-700 hover:bg-green-800 w-full text-white text-center font-bold mt-4 py-2 px-4 rounded"

@@ -7,7 +7,9 @@ const { title, imageSrc, description } = Astro.props;
 const message = `Hola, estoy interesado en saber más sobre ${title}.`;
 ---
 
-<div class="bg-white rounded-lg shadow-lg overflow-hidden group relative pb-2">
+<div
+  class="bg-white dark:bg-gray-800 ; rounded-lg shadow-lg overflow-hidden group relative pb-2"
+>
   <div class="w-full h-46 overflow-hidden">
     <picture>
       <source srcset={`${imageSrc}`} type="image/webp" />
@@ -23,15 +25,17 @@ const message = `Hola, estoy interesado en saber más sobre ${title}.`;
   </div>
 
   <div class="p-5">
-    <span class="text-lg font-semibold text-gray-900">{title}</span>
-    <p class="text-gray-600">{description}</p>
+    <span class="text-lg font-semibold text-gray-900 dark:text-white"
+      >{title}</span
+    >
+    <p class="text-gray-600 dark:text-gray-100">{description}</p>
   </div>
 
   <div class="absolute bottom-0 right-2">
     <small>
       <a
         href={getWhatsappLink(PHONE_NUMBER, message)}
-        class="text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out"
+        class="text-green-700 hover:text-green-800 transition duration-300 ease-in-out"
         target="_blank"
         rel="noopener noreferrer"
       >

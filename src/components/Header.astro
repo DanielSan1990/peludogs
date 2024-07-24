@@ -30,6 +30,7 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
   >
     Peludogs
   </h1>
+
   <span class="md:hidden text-center">
     <img
       id="logo-mobile"
@@ -44,27 +45,29 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
     class="hidden w-full md:flex md:justify-center md:items-center"
     id="menu"
   >
+    <button
+      id="theme-toggle"
+      aria-label="Toggle theme"
+      class="buttonThemePosition"
+    >
+      <i id="theme-icon" class="fa-solid fa-moon"></i>
+    </button>
     <ul class="flex flex-col md:flex-row md:space-x-4 ulHeader">
-      <li>
-        <a href="#home" class="block px-2 py-1 textHover">Inicio</a>
-      </li>
+      <li><a href="#home" class="block px-2 py-1 textHover">Inicio</a></li>
       <li>
         <a href="#services" class="block px-2 py-1 textHover">Servicios</a>
       </li>
       <li>
         <a href="#products" class="block px-2 py-1 textHover">Productos</a>
       </li>
-      <li>
-        <a href="#gallery" class="block px-2 py-1 textHover">Galería</a>
-      </li>
+      <li><a href="#gallery" class="block px-2 py-1 textHover">Galería</a></li>
       <li>
         <a href="#testimonies" class="block px-2 py-1 textHover">Testimonios</a>
       </li>
-      <li>
-        <a href="#contact" class="block px-2 py-1 textHover">Contacto</a>
-      </li>
+      <li><a href="#contact" class="block px-2 py-1 textHover">Contacto</a></li>
     </ul>
   </nav>
+
   <!-- Botón de "Pedir Cita" (visible solo en escritorio) -->
   <a
     href={getWhatsappLink(PHONE_NUMBER, message)}
@@ -74,7 +77,9 @@ const message = `Hola, me gustaría concertar una cita con Peludogs.`;
   >
     Pedir Cita
   </a>
+  <!-- Botón de cambio de tema -->
+
 </header>
 
 <script src="../utils/header.js"></script>
-
+<script src="../utils/themeToggle.js"></script>
