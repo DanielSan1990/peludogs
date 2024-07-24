@@ -1,4 +1,5 @@
 export const PHONE_NUMBER = "658307250";
+export const EMAIL_ADDRESS = "ainhoarb79@gmail.com";
 
 export const PRIVACY_TEXT = `
   <p>En <strong>Peludogs</strong>, nos comprometemos a proteger tu privacidad y garantizar que tus datos personales estén seguros. Esta política de privacidad explica cómo recopilamos, utilizamos y protegemos tus datos personales.</p>

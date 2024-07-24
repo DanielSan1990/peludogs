@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = form.message.value;
 
       // Construye el enlace mailto
-      const mailtoLink = `mailto:destino@correo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nombre: ${name}\nCorreo electrónico: ${email}\n\nMensaje:\n${message}`)}`;
+      const mailtoLink = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nombre: ${name}\nCorreo electrónico: ${email}\n\nMensaje:\n${message}`)}`;
 
       // Abre el enlace mailto
       window.location.href = mailtoLink;
