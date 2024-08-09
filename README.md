@@ -1,54 +1,103 @@
-# Astro Starter Kit: Basics
+# Peludogs Landing Page
 
-```sh
-npm create astro@latest -- --template basics
+Bienvenido al repositorio de **Peludogs Landing Page**, una landing page diseñada para un negocio de peluquería canina. Este proyecto utiliza Astro con integración de React y TailwindCSS para proporcionar una experiencia de desarrollo moderna y eficiente.
+
+## Tabla de Contenidos
+
+- [Peludogs Landing Page](#peludogs-landing-page)
+  - [Tabla de Contenidos](#tabla-de-contenidos)
+  - [Instalación](#instalación)
+  - [Scripts Disponibles](#scripts-disponibles)
+    - [`npm run dev`](#npm-run-dev)
+    - [`npm run build`](#npm-run-build)
+    - [`npm run preview`](#npm-run-preview)
+    - [`npm run astro`](#npm-run-astro)
+  - [Estructura del Proyecto](#estructura-del-proyecto)
+  - [Dependencias](#dependencias)
+  - [DevDependencies](#devdependencies)
+  - [Contribuciones](#contribuciones)
+  - [Licencia](#licencia)
+
+## Instalación
+
+Para comenzar con este proyecto, primero clona el repositorio y luego instala las dependencias utilizando npm o yarn:
+
+```bash
+git clone https://github.com/tu-usuario/peludogs-landing-page.git
+cd peludogs-landing-page
+npm install
+# o
+yarn install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Scripts Disponibles
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+En el proyecto puedes ejecutar los siguientes scripts:
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### `npm run dev`
 
-## 🚀 Project Structure
+Inicia el servidor de desarrollo en `http://localhost:3000`.
 
-Inside of your Astro project, you'll see the following folders and files:
+### `npm run build`
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+Realiza una revisión del código con `astro check` y luego construye el proyecto para producción.
+
+### `npm run preview`
+
+Previsualiza el proyecto construido en `http://localhost:3000`.
+
+### `npm run astro`
+
+Ejecuta el CLI de Astro.
+
+## Estructura del Proyecto
+
+```plaintext
+src
+├── components
+│   ├── Card.astro
+│   ├── Footer.astro
+│   ├── Gallery.jsx
+│   └── Header.astro
+├── constants
+│   ├── common.ts
+│   └── meta.ts
+├── env.d.ts
+├── layouts
+│   └── Layout.astro
+├── pages
+│   └── index.astro
+├── styles
+│   └── index.css
+└── utils
+    ├── header.js
+    └── hideElfsightWidget.js
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Dependencias
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+El proyecto utiliza las siguientes dependencias:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- `@astrojs/check`: ^0.5.10
+- `@astrojs/react`: ^3.6.0
+- `@astrojs/tailwind`: ^5.1.0
+- `react`: ^18.3.1
+- `react-dom`: ^18.3.1
+- `react-responsive-carousel`: ^3.2.23
+- `tailwindcss`: ^3.4.3
+- `typescript`: ^5.4.3
 
-## 🧞 Commands
+## DevDependencies
 
-All commands are run from the root of the project, from a terminal:
+El proyecto utiliza las siguientes dependencias de desarrollo:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- `@types/node`: ^20.11.30
+- `astro`: ^4.11.6
 
-## 👀 Want to learn more?
+## Contribuciones
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Si deseas contribuir a este proyecto, por favor abre un issue o envía un pull request.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.

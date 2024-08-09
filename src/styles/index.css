@@ -1,34 +1,244 @@
+/* Variables CSS */
 :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-        45deg,
-        rgb(var(--accent)),
-        rgb(var(--accent-light)) 30%,
-        white 60%
-    );
+  --accent: 136, 58, 234;
+  --accent-light: 224, 204, 250;
+  --accent-dark: 49, 10, 101;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
 }
+
+/* Estilos generales */
 html {
-    font-family: "Montserrat", sans-serif;
-    background: #ffffff;
-    background-size: 224px;
+  font-family: "Montserrat", sans-serif;
 }
+
+body {
+  margin-top: 90px;
+  @apply bg-white text-black dark:bg-gray-900 dark:text-white;
+}
+
 main {
-    margin: auto;
-    padding: 1rem;
-    width: 900px;
-    max-width: calc(100% - 2rem);
-
-    font-size: 20px;
-    line-height: 1.6;
+  margin: auto;
+  padding: 1rem;
+  width: 1200px;
+  max-width: calc(100% - 2rem);
+  font-size: 20px;
+  line-height: 1.6;
+  @apply bg-white text-black dark:bg-gray-900 dark:text-white;
 }
 
+/* Estilos del header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  transition:
+    background-color 1s,
+    box-shadow 1s,
+    transform 1s;
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
 
+header:hover {
+  @apply bg-white dark:bg-gray-800;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.header-title-mobile {
+  font-family: "Playwrite HR Lijeva", cursive;
+}
+
+.icon-fa-ellipsis {
+  font-size: 0.8rem;
+  margin: -3px;
+}
+
+.logoPosition {
+  position: absolute;
+  margin-left: 225px;
+  transition: opacity 0.5s;
+}
+
+.buttonThemePosition {
+  position: absolute;
+  right: 272px;
+  top: 32px;
+}
+
+@media (max-width: 860px) {
+  .buttonThemePosition {
+    position: absolute;
+    right: 43px;
+    top: 35px;
+  }
+}
+@media (max-width: 750px) {
+  .buttonThemePosition {
+    position: absolute;
+    right: 43px;
+    top: 110px;
+  }
+}
+
+@media (max-width: 860px) {
+  .logoPosition {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.contactButtonPosition {
+  position: absolute;
+  right: 125px;
+  transition: opacity 0.5s;
+  @apply bg-green-700 hover:bg-green-800 text-white;
+}
+
+.contactButtonPosition.dark {
+  @apply bg-green-600 hover:bg-green-700 text-white;
+}
+
+/* Estilos responsivos */
+@media (max-width: 860px) {
+  .contactButtonPosition {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.ulHeader {
+  padding: 25px;
+}
+
+.textHover:hover {
+  color: rgb(21, 128, 61);
+  @apply text-green-700 dark:text-green-400;
+}
+
+/* Estilos de componentes específicos */
+.containerTop {
+  position: relative;
+  top: 10px;
+  @apply bg-white dark:bg-gray-900;
+}
 
 .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18ch, 2fr));
-    gap: 1rem;
-    padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18ch, 2fr));
+  gap: 1rem;
+  padding: 0;
+}
+
+/* Estilos de la galería de imágenes */
+.slider-container {
+  margin: auto;
+  max-width: 1200px;
+  text-align: center;
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
+
+@media (max-width: 350px) {
+  .slider-container {
+    max-width: 300px;
+  }
+}
+
+.image-gallery-slide img {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-gallery-content .image-gallery-slide {
+  border-radius: 5px;
+  width: 100%;
+  background-color: #000;
+  @apply bg-black dark:bg-gray-800;
+}
+
+.image-gallery-thumbnail img {
+  border-radius: 5px;
+}
+
+/* Estilos para el modal */
+.modal-hidden {
+  display: none;
+}
+
+.bg-smoke-light {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Estilos para el cookieContent */
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+.cookie-consent.hidden {
+  transform: translateY(100%);
+}
+
+.cookie-consent button {
+  background-color: #004085;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.cookie-consent button:hover {
+  background-color: #002752;
+}
+
+.cookie-consent .reject-button {
+  background-color: #bd2130;
+}
+
+.cookie-consent .reject-button:hover {
+  background-color: #84151e;
+}
+
+/* Estilos para las reseñas de google */
+.bAAKYH {
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
+
+.bxloCP {
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
+
+.fOLOsK {
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
+
+.gVYKGX {
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
 }

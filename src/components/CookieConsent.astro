@@ -1,0 +1,14 @@
+---
+const { message, acceptText, rejectText } = Astro.props;
+---
+
+<div id="cookie-consent" class="cookie-consent hidden">
+  <span>{message}</span>
+  <div>
+    <button id="accept-cookies">{acceptText}</button>
+    <button id="reject-cookies" class="reject-button">{rejectText}</button>
+  </div>
+</div>
+
+
+<script src="../utils/cookieConsent.js"></script>

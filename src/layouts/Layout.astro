@@ -1,7 +1,10 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import CookieConsent from "../components/CookieConsent.astro";
+import { META } from "../constants/meta";
 import "../styles/index.css";
+import { MESSAGE_COOKIE_CONSENT } from "@constants/common";
 
 interface Props {
   title: string;
@@ -14,51 +17,69 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={META.description} />
+    <meta name="viewport" content={META.viewport} />
+    <link rel="icon" type="image/svg+xml" href={META.favicon} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- Preload del video -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="preload"
+      href="/peludogs/assets/video/gosbi_publi.mp4"
+      as="video"
     />
+
+    <!-- Preload critical images -->
+    <link
+      rel="preload"
+      href="/peludogs/assets/images/servicio_1.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="/peludogs/assets/images/servicio_2.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="/peludogs/assets/images/servicio_3.webp"
+      as="image"
+    />
+
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap"
+      /></noscript
+    >
+    <link rel="stylesheet" href={META.fontAwesome} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+
+    <!-- Load fonts with map -->
+    {
+      META.googleFonts.map((fontUrl) => (
+        <link href={fontUrl} rel="stylesheet" />
+      ))
+    }
   </head>
   <body>
     <Header />
     <slot />
-    <!-- Botón de WhatsApp solo para escritorio -->
-    <a
-      href="https://wa.me/1234567890"
-      target="_blank"
-      class="hidden md:inline-flex fixed top-8 right-8 z-50"
-    >
-      <button
-        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-      >
-        <i class="fa-brands fa-whatsapp"></i>
-      </button>
-    </a>
-
-    <!-- Botón de WhatsApp solo para móvil -->
-    <a
-      href="https://wa.me/1234567890"
-      target="_blank"
-      class="md:hidden inline-flex fixed bottom-0 right-4 z-50"
-    >
-      <button
-        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-      >
-        <i class="fa-brands fa-whatsapp"></i>
-      </button>
-    </a>
-
     <Footer />
+    <CookieConsent
+      message={MESSAGE_COOKIE_CONSENT}
+      acceptText="Aceptar"
+      rejectText="Rechazar"
+    />
   </body>
 </html>

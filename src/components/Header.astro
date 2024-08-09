@@ -1,70 +1,85 @@
+---
+import { PHONE_NUMBER } from "@constants/common";
+import { getWhatsappLink } from "@utils/common";
+
+const message = `Hola, me gustaría concertar una cita con Peludogs.`;
+---
+
 <header
   class="text-neutral-700 flex items-center justify-between px-4 py-1 border-b-2 border-green-700"
 >
   <!-- Logotipo -->
-  <a href="/" class="shrink-0">
-    <img src="/assets/logos/logo.png" alt="Peludogs" class="h-12 md:h-24" />
-  </a>
+  <img
+    id="logo"
+    src="/peludogs/assets/logos/logo.png"
+    alt="Peludogs"
+    class="h-12 md:h-24 logoPosition"
+  />
+  <!-- Botón de menú hamburguesa (visible solo en móvil) -->
+  <button
+    class="md:hidden p-2 mr-2 shadow flex flex-col items-center"
+    aria-label="Toggle menu"
+    id="menuButton"
+  >
+    <i class="fa-solid fa-paw"></i>
+    <i class="fa-solid fa-ellipsis icon-fa-ellipsis"></i>
+  </button>
+  <!-- Título visible solo en móvil -->
+  <h1
+    class="header-title-mobile text-lg font-bold font-serif underline md:hidden"
+  >
+    Peludogs
+  </h1>
+
+  <span class="md:hidden text-center">
+    <img
+      id="logo-mobile"
+      src="/peludogs/assets/logos/logo.png"
+      alt="Peludogs"
+      class="h-11"
+    />
+  </span>
 
   <!-- Navegación (oculta en móvil y se muestra como desplegable) -->
   <nav
     class="hidden w-full md:flex md:justify-center md:items-center"
     id="menu"
   >
-    <ul class="flex flex-col md:flex-row md:space-x-4">
-      <li><a href="/" class="block px-2 py-1 hover:text-gray-300">Inicio</a></li>
+    <button
+      id="theme-toggle"
+      aria-label="Toggle theme"
+      class="buttonThemePosition"
+    >
+      <i id="theme-icon" class="fa-solid fa-moon"></i>
+    </button>
+    <ul class="flex flex-col md:flex-row md:space-x-4 ulHeader">
+      <li><a href="#home" class="block px-2 py-1 textHover">Inicio</a></li>
       <li>
-        <a href="/services" class="block px-2 py-1 hover:text-gray-300"
-          >Servicios</a
-        >
+        <a href="#services" class="block px-2 py-1 textHover">Servicios</a>
       </li>
       <li>
-        <a href="/product" class="block px-2 py-1 hover:text-gray-300"
-          >Productos</a
-        >
+        <a href="#products" class="block px-2 py-1 textHover">Productos</a>
       </li>
+      <li><a href="#gallery" class="block px-2 py-1 textHover">Galería</a></li>
       <li>
-        <a href="/gallery" class="block px-2 py-1 hover:text-gray-300"
-          >Galería</a
-        >
+        <a href="#testimonies" class="block px-2 py-1 textHover">Testimonios</a>
       </li>
-      <li>
-        <a href="/testimonials" class="block px-2 py-1 hover:text-gray-300"
-          >Testimonios</a
-        >
-      </li>
-      <li>
-        <a href="/contact" class="block px-2 py-1 hover:text-gray-300"
-          >Contacto</a
-        >
-      </li>
+      <li><a href="#contact" class="block px-2 py-1 textHover">Contacto</a></li>
     </ul>
   </nav>
 
-  <!-- Botón de menú hamburguesa (visible solo en móvil) -->
-  <button class="md:hidden p-2" aria-label="Toggle menu" id="menuButton">
-    <svg
-      class="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M4 6h16M4 12h16m-7 6h7"></path></svg
-    >
-  </button>
+  <!-- Botón de "Pedir Cita" (visible solo en escritorio) -->
+  <a
+    href={getWhatsappLink(PHONE_NUMBER, message)}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contactButtonPosition hidden md:inline-block bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800"
+  >
+    Pedir Cita
+  </a>
+  <!-- Botón de cambio de tema -->
+
 </header>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuButton = document.getElementById("menuButton");
-    const menu = document.getElementById("menu");
-
-    menuButton.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-  });
-</script>
+<script src="../utils/header.js"></script>
+<script src="../utils/themeToggle.js"></script>

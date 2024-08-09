@@ -1,155 +1,225 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import ImageCarousel from "../components/ImageCarousel";
-import loadImages from "../utils";
+import Gallery from "../components/Gallery";
+import { EMAIL_ADDRESS, PHONE_NUMBER } from "../constants/common";
+import { getWhatsappLink } from "../utils/common";
+import "../styles/index.css";
 
-const images = await loadImages("public/assets/images", "carousel");
-console.log(images);
+const message = `Hola, me gustaría concertar una cita con Peludogs.`;
 ---
 
 <Layout title="Bienvenido a Peludogs">
-  <main>
-    <h1
-      class="flex flex-wrap justify-center items-center text-3xl font-bold text-neutral-700 underlinemt-4 mb-4"
-    >
-      Bienvenid@ a
-      <img
-        src="/assets/logos/logo.png"
-        alt="Peludogs"
-        class="h-16 md:h-36 ml-2"
-      />
-    </h1>
-
-    <div class="w-full rounded-lg overflow-hidden">
-      <video width="100%" height="auto" autoplay loop muted>
-        <source src="/assets/video/gosbi_publi.mp4" type="video/mp4" />
+  <main id="home">
+    <div class="w-full rounded-lg overflow-hidden mt-5">
+      <video width="100%" height="auto" autoplay loop muted preload="auto">
+        <source src="/peludogs/assets/video/gosbi_publi.mp4" type="video/mp4" />
         Tu navegador no soporta el elemento de video.
       </video>
     </div>
-    <!-- <ImageCarousel client:load images={images.map( imageName =>  `assets/images/carousel/${imageName}`)} /> -->
-    <section class="my-8">
+
+    <section id="services" class="my-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
-
-        <h1 class="px-4 text-2xl font-bold text-neutral-700">
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
           Nuestros servicios
         </h1>
         <div class="flex-grow h-0.5 bg-green-700"></div>
       </div>
-
-      <ul role="list" class="link-card-grid my-4">
-        <Card
-          title="Peluería"
-          imageSrc="assets/images/servicio_1.jpg"
-          description="Transformamos a tu mejor amigo en una estrella!"
-          sectionSrc="/services"
-        />
-        <Card
-          title="Corte de uñas"
-          imageSrc="assets/images/servicio_2.jpg"
-          description="La salud de las patas de tu mascota es nuestra prioridad."
-          sectionSrc="/services"
-        />
-
-        <Card
-          title="Baño"
-          imageSrc="assets/images/servicio_3.jpg"
-          description="Nuestro servicio de baños para mascotas no es solo una limpieza profunda."
-          sectionSrc="/services"
-        />
-      </ul>
+      <div class="container mx-auto px-4 py-4">
+        <nav class="flex mb-4 justify-center">
+          <span class="text-3xl text-gray-600 py-2 px-4 focus:outline-none"
+            ><i class="fa-solid fa-scissors text-gray-600"></i></span
+          >
+          <span class="text-3xl text-gray-600 py-2 px-4 focus:outline-none"
+            ><i class="fa-solid fa-paw text-gray-600"></i></span
+          >
+          <span class="text-3xl text-gray-600 py-2 px-4 focus:outline-none"
+            ><i class="fa-solid fa-shower text-gray-600"></i></span
+          >
+        </nav>
+        <div class="grid md:grid-cols-3 grid-rows-1 gap-4 md:divide-x">
+          <Card
+            title="Peluquería"
+            imageSrc="/peludogs/assets/images/servicio_1.webp"
+            description="Transformamos a tu mascota en una estrella con cortes personalizados que destacan su belleza y aseguran su comodidad. Utilizamos productos suaves y técnicas profesionales para que tu amigo luzca y se sienta espectacular."
+          />
+          <Card
+            title="Corte de uñas"
+            imageSrc="/peludogs/assets/images/servicio_2.webp"
+            description="Nos enfocamos en la salud de las patas de tu mascota con un servicio de corte de uñas rápido, seguro y cómodo, evitando molestias y promoviendo una marcha saludable."
+          />
+          <Card
+            title="Baño"
+            imageSrc="/peludogs/assets/images/servicio_3.webp"
+            description="Ofrecemos un baño que es más que una limpieza, es una experiencia de mimos y relajación. Usamos champús especiales para cuidar la piel y el pelo de tu mascota, dejándola con un aroma fresco y un pelaje suave y brillante."
+          />
+        </div>
+      </div>
     </section>
 
-    <section class="mt-8">
+    <section id="products" class="mt-8">
       <div class="flex items-center">
         <div class="flex-grow h-0.5 bg-green-700"></div>
-
-        <h1 class="px-4 text-2xl font-bold text-neutral-700">
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
           Nuestros productos
         </h1>
         <div class="flex-grow h-0.5 bg-green-700"></div>
       </div>
-      <ul role="list" class="link-card-grid my-4">
+      <nav class="flex mb-4 justify-center">
+        <span class="text-3xl text-gray-600 py-2 px-4 focus:outline-none"
+          ><i class="fa-solid fa-bowl-food text-gray-600"></i></span
+        >
+        <span class="text-3xl text-gray-600 py-2 px-4 focus:outline-none"
+          ><i class="fa-solid fa-bone text-gray-600"></i></span
+        >
+        <span class="text-3xl text-gray-600 py-2 px-4 focus:outline-none"
+          ><i class="fa-solid fa-futbol text-gray-600"></i></span
+        >
+      </nav>
+      <div class="grid md:grid-cols-3 grid-rows-1 gap-4 md:divide-x">
         <Card
           title="Comida para perros"
-          imageSrc="assets/images/producto_1.jpg"
+          imageSrc="/peludogs/assets/images/producto_1.webp"
           description="Nutre a tu fiel amigo con nuestra selección premium de alimentos para perros."
-          sectionSrc="/products"
         />
         <Card
           title="Snacks y Chuches"
-          imageSrc="assets/images/producto_2.jpg"
+          imageSrc="/peludogs/assets/images/producto_2.webp"
           description="Consiente a tu perro con nuestros deliciosos snacks y chuches."
-          sectionSrc="/products"
         />
-
         <Card
           title="Accesorios y Juguetes"
-          imageSrc="assets/images/producto_3.jpg"
+          imageSrc="/peludogs/assets/images/producto_3.webp"
           description="Descubre el paraíso de los juguetes y accesorios para tu perro en nuestra tienda."
-          sectionSrc="/products"
         />
-      </ul>
+      </div>
     </section>
 
-    <section class="mt-8">
+    <section id="gallery" class="mt-8">
       <div class="flex items-center">
-        <div class="flex-grow h-0.5 bg-green-700 mb-4"></div>
-
-        <h1 class="px-4 text-2xl font-bold text-neutral-700">
-          Nuestros clientes opinan
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
+          Galería
         </h1>
         <div class="flex-grow h-0.5 bg-green-700"></div>
       </div>
-      <div class="mt-8">
+      <div
+        class="flex items-center mt-8 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 rounded-lg shadow-lg overflow-hidden group relative p-6"
+      >
+        <Gallery client:load />
+      </div>
+    </section>
 
+    <section id="testimonies" class="mt-8">
+      <div class="flex items-center">
+        <div class="flex-grow h-0.5 bg-green-700 "></div>
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
+          Opiniones
+        </h1>
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+      </div>
+      <div
+        class="mt-8 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 rounded-lg shadow-lg overflow-hidden group relative p-6"
+      >
         <script
           src="https://static.elfsight.com/platform/platform.js"
           data-use-service-core
-          defer></script>
+          defer
+          is:inline></script>
         <div
-          class="elfsight-app-b5b171a3-026e-40d5-a8c0-8d8602e30140"
+          class="elfsight-app-b5b171a3-026e-40d5-a8c0-8d8602e30140 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100"
           data-elfsight-app-lazy
         >
         </div>
       </div>
     </section>
+
+    <section id="contact" class="mt-8">
+      <div class="flex items-center">
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+        <h1 class="px-4 text-2xl font-bold text-neutral-700 dark:text-gray-100">
+          Contacto
+        </h1>
+        <div class="flex-grow h-0.5 bg-green-700"></div>
+      </div>
+      <div
+        class="container mx-auto p-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 rounded-lg shadow-lg overflow-hidden group relative"
+      >
+        <div class="flex flex-col justify-between">
+          <form id="contact-form" class="flex flex-col space-y-4 h-full">
+            <input
+              type="text"
+              name="name"
+              placeholder="Nombre"
+              class="border p-2 rounded"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              class="border p-2 rounded"
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Asunto"
+              class="border p-2 rounded"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Mensaje"
+              class="border p-2 rounded"
+              rows="5"
+              required></textarea>
+            <button
+              type="submit"
+              class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded"
+            >
+              Enviar
+            </button>
+          </form>
+        </div>
+
+        <div
+          class="text-gray-600 dark:text-gray-100 flex flex-col justify-between mt-4"
+        >
+          <div>
+            <p class="font-semibold text-gray-800 dark:text-white">Peludogs</p>
+            <p>Calle Sgto. Provisional, 61, 38010 Santa Cruz de Tenerife</p>
+            <p>
+              Teléfono: <a href="tel:+34658307250" class="hover:text-green-700"
+                >+34 658 30 72 50</a
+              >
+            </p>
+            <p>Email: {EMAIL_ADDRESS}</p>
+            <p>Horario: L - V 10:00-18:00</p>
+          </div>
+          <a
+            class="bg-green-700 hover:bg-green-800 w-full text-white text-center font-bold mt-4 py-2 px-4 rounded"
+            href={getWhatsappLink(PHONE_NUMBER, message)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pedir cita</a
+          >
+        </div>
+      </div>
+      <div class="mt-6">
+        <iframe
+          title="Ubicación de Peludogs"
+          class="w-full h-96 rounded-lg border-0"
+          loading="lazy"
+          allowfullscreen
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.9827536216744!2d-16.29310568733697!3d28.449936275664005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cce6ff792e31%3A0x82464fe4aa632831!2sCalle Sgto. Provisional%2C 61%2C 38010 Santa Cruz de Tenerife!5e0!3m2!1ses!2ses!4v1711817526455!5m2!1ses!2ses"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
   </main>
 </Layout>
 
-<!-- <Card
-title="Peluería"
-imageSrc="assets/images/servicio_1.jpg"
-description="Transformamos a tu mejor amigo en una estrella! Nuestro servicio de peluquería canina incluye un corte personalizado que no solo resalta su belleza natural, sino que también asegura su comodidad. Utilizamos productos suaves y técnicas profesionales para que tu mascota luzca y se sienta espectacular."
-/>
-<Card
-title="Corte de uñas"
-imageSrc="assets/images/servicio_2.jpg"
-description="La salud de las patas de tu mascota es nuestra prioridad. Ofrecemos un servicio de corte de uñas rápido, seguro y cómodo, evitando molestias y promoviendo una marcha saludable. ¡Cuida las patas de tu amigo peludo para que siga corriendo y jugando feliz!"
-/>
-
-<Card
-title="Baño"
-imageSrc="assets/images/servicio_3.jpg"
-description="Nuestro servicio de baños para mascotas no es solo una limpieza profunda, es una experiencia de mimos y relajación. Utilizamos champús especiales que cuidan su piel y pelo, dejando a tu mascota con un aroma fresco y un pelaje suave y brillante. Perfecto para mantener a tu compañero siempre listo para un abrazo."
-/> 
-
-        <Card
-          title="Comida para perros"
-          imageSrc="assets/images/producto_1.jpg"
-          description="Nutre a tu fiel amigo con nuestra selección premium de alimentos para perros. Cada bocado está lleno de los nutrientes esenciales para mantener a tu mascota sana, activa y feliz. Elije entre una variedad de sabores y fórmulas específicas para cada etapa de la vida de tu compañero peludo."
-        />
-        <Card
-          title="Snacks y Chuches"
-          imageSrc="assets/images/producto_2.jpg"
-          description="Consiente a tu perro con nuestros deliciosos snacks y chuches. Perfectos para entrenamiento o simplemente como una muestra de amor, nuestros bocados saludables son el complemento ideal para su dieta diaria. Descubre sabores irresistibles que harán mover la cola de tu amigo de felicidad."
-        />
-
-        <Card
-          title="Accesorios y Juguetes"
-          imageSrc="assets/images/producto_3.jpg"
-          description="Descubre el paraíso de los juguetes y accesorios para tu perro en nuestra tienda. Desde divertidos juguetes para mantenerlos activos y entretenidos, hasta los accesorios más chic para pasear con estilo. Todo lo que tu mascota necesita para jugar, aprender y explorar el mundo a su lado."
-        />
-
--->
+<script src="../utils/hideElfsightWidget.js"></script>
+<script src="../utils/sendEmail.js"></script>
